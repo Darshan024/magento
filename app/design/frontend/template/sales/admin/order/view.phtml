@@ -1,0 +1,190 @@
+<?php
+// echo "<pre>";
+// $orderData = $this->getOrderData();
+$orderData = $this->getOrderData();
+// print_r($orderData);
+$customerData = $this->getCustomerData($orderData->getCustomerId());
+// print_r($customerData);
+$orderItemData = $this->getOrderItemData($orderData->getOrderId());
+// print_r($orderItemData);
+// $productData = $this->getProductData($orderItemData->getProductId());
+// print_r($productData);
+$shippingData = $this->getShippingData($orderData->getShippingId());
+// print_r($shippingData);
+$paymentData = $this->getPaymentData($orderData->getPaymentId());
+// print_r($paymentData);
+$historyData = $this->getHistoryData($orderData->getOrderId());
+// print_r($historyData);
+?>
+
+
+<div class="container-new">
+    <div class="data">
+        <div class="customerData">
+            <p>Customer Name :
+                <?php echo $customerData->getFirstName(); ?>
+            </p>
+            <p>Customer Email :
+                <?php echo $customerData->getCustomerEmail(); ?>
+            </p>
+            <p>Contact :
+                <?php echo $customerData->getBillingPhone(); ?>
+            </p>
+            <p>Address :
+                <?php echo $customerData->getBillingAddress(); ?>
+            </p>
+        </div>
+        <div class="shippingData">
+            <table class="table-new">
+                <thead>
+                    <tr>
+                        <th>Shipping Id</th>
+                        <th>Order Id</th>
+                        <th>Shipping Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <?php echo $shippingData->getShippingId(); ?>
+                        </td>
+                        <td>
+                            <?php echo $shippingData->getOrderId(); ?>
+                        </td>
+                        <td>
+                            <?php echo $shippingData->getShippingMethod(); ?>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="paymentData">
+            <table class="table-new">
+                <thead>
+                    <tr>
+                        <th>Payment Id</th>
+                        <th>Payment Method</th>
+                        <th>Order Id</th>
+                        <th>Card Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <?php echo $paymentData->getPaymentId(); ?>
+                        </td>
+                        <td>
+                            <?php echo $paymentData->getPaymentMethod(); ?>
+                        </td>
+                        <td>
+                            <?php echo $paymentData->getOrderId(); ?>
+                        </td>
+                        <td>
+                            <?php echo $paymentData->getcardNumber(); ?>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="productData">
+        <?php foreach ($orderItemData as $itemData) {
+            $productData = $this->getProductData($itemData->getProductId());
+            // print_r($productData);
+            ?>
+            <div class="product">
+                <div class="prodImage">
+                    <p>
+                        <img src="<?php echo $this->getUrl('media/product/') . $productData->getImageLink(); ?>" alt="">
+                    </p>
+                </div>
+                <div class="prodData">
+                    <p>Sku :
+                        <?php echo $productData->getSku(); ?>
+                    </p>
+                    <p>Price :
+                        <?php echo $productData->getPrice(); ?>
+                    </p>
+                    <p>Row Total :
+                        <?php echo $itemData->getRowTotal(); ?>
+                    </p>
+                    <p>Grand Total :
+                        <?php echo $orderData->getGrandTotal(); ?>
+                    </p>
+                </div>
+            </div>
+        <?php } ?>
+    </div>
+
+    <div class="profit-loss">
+        <table class="table-new">
+            <thead>
+                <tr>
+                    <th>Mfr Cost</th>
+                    <th>Shipping Cost</th>
+                    <th>Total Cost</th>
+                    <th>Price</th>
+                    <th>Profit/Loss</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($orderItemData as $itemData) {
+                    $productData = $this->getProductData($itemData->getProductId());
+                    ?>
+                    <tr>
+                        <td>
+                            <?php echo $productData->getMfrCost(); ?>
+                        </td>
+                        <td>
+                            <?php echo $productData->getShippingCost(); ?>
+                        </td>
+                        <td>
+                            <?php echo $productData->getTotalCost(); ?>
+                        </td>
+                        <td>
+                            <?php echo $productData->getPrice(); ?>
+                        </td>
+                        <td>
+                            <?php print_r($productData->getPrice() - $productData->getTotalCost()); ?>
+                        </td>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+    <div class="statusHistory">
+        <table class="table-new">
+            <thead>
+                <tr>
+                    <th>Order Id</th>
+                    <th>From Status</th>
+                    <th>To Status</th>
+                    <th>Date</th>
+                    <th>Action By</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($historyData->getData() as $history): ?>
+                    <tr>
+                        <td>
+                            <?php echo $history->getOrderId(); ?>
+                        </td>
+                        <td>
+                            <?php echo $history->getFromStatus(); ?>
+                        </td>
+                        <td>
+                            <?php echo $history->getToStatus(); ?>
+                        </td>
+                        <td>
+                            <?php echo $history->getDate(); ?>
+                        </td>
+                        <td>
+                            <?php echo $history->getActionBy(); ?>
+                        </td>
+                    </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+    </div>
+
+</div>

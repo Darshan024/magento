@@ -1,0 +1,80 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #cdeef3;
+}
+.container-new {
+  max-width: 8000px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.table-new {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.table-new th,
+.table-new td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+.table-new th {
+  background-color: #f4f4f4;
+}
+.table-new tr:hover {
+  background-color: #f0f0f0;
+}
+.product-image-new {
+  max-width: 150px;
+  max-height: 150px;
+}
+#h1 {
+  text-align: center;
+  background-color: rgb(150, 152, 152);
+}
+.orderStatus {
+  font-size: 17px;
+}
+.statusForm {
+  display: flex;
+}
+.statuses {
+  width: 89px;
+  font-size: 16px;
+  margin-right: 6px;
+  padding: 2px 4px 2px 4px;
+  border-radius: 8px;
+}
+#statusSubmit {
+  font-size: 16px;
+  padding: 2px 4px 2px 4px;
+  border-radius: 8px;
+  border: 1px solid black;
+}
+button {
+  background-color: #ffffff;
+  margin-left: 18px;
+  padding: 0.3rem 1rem;
+  color: black;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.7px;
+  border-radius: 9px;
+  /* line-height: 2; */
+  border: 0px;
+  transition: 0.3s;
+}
+button:hover {
+  background-color: #ddd;
+}
+.fa-check:hover {
+  color: rgb(5, 202, 38);
+}
+.fa-times:hover {
+  color: red;
+}

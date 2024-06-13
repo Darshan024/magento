@@ -1,0 +1,27 @@
+<div class="form">
+    <h2>Add Category</h2>
+    <form method="POST" action="<?php echo $this->getUrl('admin/catalog_category/save') ?>">
+        <?php $categoryModel = $this->getCategoryForm(); ?>
+        <div class="row">
+            <input type="hidden" name="catalog_category[category_id]"
+                value="<?php echo $categoryModel->getCategoryId(); ?>">
+        </div>
+        <div class="row">
+            <label for="category">Category Name : </label>
+            <input type="text" name="catalog_category[category_name]" id="category"
+                value="<?php echo $categoryModel->getCategoryName(); ?>">
+        </div>
+        <div class="row">
+            <label for="status">Status : </label>
+            <!-- <input type="text" name="catalog_category[status]" id="status"
+                value="<?php //echo $categoryModel->getStatus();     ?>"> -->
+            <select id="status" name="catalog_category[status]" class="input">
+                <option value="1" <?php echo $categoryModel->getStatus() == 1 ? 'selected' : '' ?>>Enabled</option>
+                <option value="0" <?php echo $categoryModel->getStatus() == 0 ? 'selected' : '' ?>>Disabled</option>
+            </select>
+        </div>
+        <div class="row">
+            <input type="submit" value="Submit">
+        </div>
+    </form>
+</div>

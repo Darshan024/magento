@@ -1,0 +1,14 @@
+<?php $js = $this->getJs(); ?>
+<?php if (count($js)): ?>
+    <?php foreach ($js as $_js): ?>
+        <script type="text/javascript" src="<?php echo Mage::getBaseUrl() . $_js; ?>"></script>
+    <?php endforeach; ?>
+<?php endif ?>
+
+<?php $css = $this->getCss(); ?>
+<?php if (count($css)): ?>
+    <?php foreach ($css as $_css): ?>
+        <link rel="stylesheet" href="<?php echo Mage::getBaseUrl() . $_css; ?>">
+    <?php endforeach; ?>
+<?php endif ?>
+<?php ?>

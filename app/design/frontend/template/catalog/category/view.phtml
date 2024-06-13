@@ -1,0 +1,68 @@
+<?php
+$productData = $this->getProductData();
+$imagePath = Mage::getBaseUrl("media/product/");
+
+?>
+<div class="prodcard">
+    <form id="formDiv" method="post">
+        <div class="filter">
+            <div class="input-submit form-group mb-3 mb-md-0">
+                <label class="labelForPrice" for="price">Price </label>
+                <select name="price" id="price_id" class="select-box">
+                    <option value="">
+                        ------------------------------------------------------------------------------------------All------------------------------------------------------------------------------------------
+                    </option>
+                    <?php foreach ($this->showPrice() as $key => $value): ?>
+                        <option value="<?php echo $value; ?>">
+                            <?php echo $key; ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            <div class="filter-submit form-group mb-3 mb-md-0">
+                <button class="filterbtn btn btn-primary" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
+    <?php foreach ($productData as $product) { ?>
+        <a href="<?php echo $this->getUrl('catalog/product/view?id=' . $product->getProductId()); ?>">
+            <div class="card">
+                <img src="<?php echo $imagePath . $product->getImageLink();
+                ; ?>" alt="Product Image">
+
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <td>
+                            <?php echo $product->getProductId(); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Color</th>
+                        <td>
+                            <?php echo $product->getColor(); ?>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Price</th>
+                        <td>
+                            <?php echo $product->getPrice(); ?>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>Status</th>
+                        <td
+                            class="<?php echo ($product->getStetus() == 'Enabled') ? 'status-active' : 'status-inactive'; ?>">
+                            <?php echo $product->getStetus(); ?>
+                        </td>
+                    </tr>
+
+                </table>
+            </div>
+        </a>
+    <?php } ?>
+</div>
+
+<!-- </table> -->
+<!-- </div> -->

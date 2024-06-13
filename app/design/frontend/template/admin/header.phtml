@@ -1,0 +1,62 @@
+<header>
+    <div class="page-header">
+        <div class="logo">
+            <a href="<?php echo $this->getUrl(''); ?>"><img id="headlogo" src=<?php echo $this->getUrl('') . "skin/images/icon.png" ?> alt="Your Logo"></a>
+        </div>
+        <div class="pill-nav" id="myDIV">
+            <ul>
+                <div class="dropdown">
+                    <a class="btn" href="<?php echo $this->getUrl("admin"); ?>"> Dashboard </a>
+                    <a class="btn" href="<?php echo $this->getUrl("admin/sales"); ?>"> Order </a>
+                </div>
+                <div class="dropdown">
+                    <a class="btn"> Product </a>
+                    <div class="dropdown-content">
+                        <a href="<?php echo $this->getUrl("admin/import"); ?>">Import CSV </a>
+                        <a href="<?php echo $this->getUrl("admin/catalog_product/form"); ?>">Product Form</a>
+                        <a href=" <?php echo $this->getUrl("admin/catalog_product/list"); ?>">Product
+                            List</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="btn"> Import </a>
+                    <div class="dropdown-content">
+                        <a href="<?php echo $this->getUrl("admin/import/form"); ?>">Upload CSV </a>
+                        <a href="<?php echo $this->getUrl("admin/import/list"); ?>">Read Csv</a>
+                        <a href=" <?php echo $this->getUrl("admin/import/readedlist"); ?>">Import Csv</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="btn"> Category </a>
+                    <div class="dropdown-content">
+                        <a href="<?php echo $this->getUrl("admin/catalog_category/form"); ?>">Category
+                            Form</a>
+                        <a href=" <?php echo $this->getUrl("admin/catalog_category/list"); ?>">Category
+                            List</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="btn"> Banner </a>
+                    <div class="dropdown-content">
+                        <a href="<?php echo $this->getUrl("admin/banner/form"); ?>">Banner Form</a>
+                        <a href=" <?php echo $this->getUrl("admin/banner/list"); ?>">Category List</a>
+                    </div>
+                </div>
+                <a class="btn" href="<?php echo $this->getUrl("admin/user/logout"); ?>">Log Out</a>
+            </ul>
+        </div>
+
+    </div>
+</header>
+<script>
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('header');
+
+        // Add a class to the header when scrolling down
+        if (window.scrollY > 0) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>

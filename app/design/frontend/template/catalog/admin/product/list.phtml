@@ -1,0 +1,105 @@
+<?php
+
+$productCollection = $this->getProduct();
+$URL = Mage::getBaseUrl('admin/catalog_product');
+// $productCollection->addFieldToFilter('name', 'abc');
+// $productCollection->addFieldToFilter('product_id', ['in' => [55]]);
+// $productCollection->addFieldToFilter('sku', ['like'=>'%abc']);
+// $productCollection->getData();
+?>
+<div class="tbl">
+    <table border="1px">
+        <tr>
+            <th>id</th>
+            <th>Sku</th>
+            <th>Name</th>
+            <!-- <th>Color</th> -->
+            <th>Size</th>
+            <th>Quantity Left</th>
+            <th>Description</th>
+            <th>Image Link</th>
+            <!-- <th>Link</th> -->
+            <th>Category ID</th>
+            <th>Price</th>
+            <!-- <th>Mfr Cost</th> -->
+            <!-- <th>Shipping Cost</th> -->
+            <th>Total Cost</th>
+            <!-- <th>Margin Percentage</th> -->
+            <!-- <th>Min Price</th> -->
+            <th>Status</th>
+            <th colspan=2>Action</th>
+        </tr>
+        <?php $qty = 0;
+        foreach ($productCollection->getData() as $product) {
+            foreach ($this->getSalesItemData($product->getProductId()) as $item) {
+                $qty = $item->getSumQty();
+            }
+            $Inventory = $product->getInventory();
+            $leftProduct = $Inventory - $qty;
+            $qty = 0;
+            ?>
+            <tr>
+                <td>
+                    <?php echo $product->getProductId(); ?>
+                </td>
+                <td>
+                    <?php echo $product->getSku(); ?>
+                </td>
+                <td>
+                    <?php echo $product->getName(); ?>
+                </td>
+                <!-- <td>
+                    <?php //echo $product->getColor();         ?>
+                </td> -->
+                <td>
+                    <?php echo $product->getSize(); ?>
+                </td>
+                <td>
+                    <?php echo $product->getInventory(); ?>
+                </td>
+                <td>
+                    <?php echo $product->getDescription(); ?>
+                </td>
+                <td>
+                    <?php echo $product->getImageLink(); ?>
+                </td>
+                <!-- <td>
+                    <?php //echo $product->getLink();   ?>
+                </td> -->
+                <td>
+                    <?php echo $this->getCategoryNameById($product->getCategoryId()) ?>
+                </td>
+                <td>
+                    <?php echo $product->getPrice(); ?>
+                </td>
+                <!-- <td>
+                    <?php //echo $product->getMfrCost();         ?>
+                </td> -->
+                <!-- <td>
+                    <?php //echo $product->getShippingCost();         ?>
+                </td> -->
+                <td>
+                    <?php echo $product->getTotalCost(); ?>
+                </td>
+                <!-- <td>
+                    <?php //echo $product->getMarginPercentage();         ?>
+                </td> -->
+                <!-- <td>
+                    <?php //echo $product->getMinPrice();          ?>
+                </td> -->
+                <td>
+                    <?php echo $product->getStetus(); ?>
+                </td>
+                <td>
+                    <a href="<?php echo $URL; ?>/form?id=<?php echo $product->getProductId(); ?>" type="button" id="update">
+                        Update </a>
+                </td>
+                <td>
+                    <a href="<?php echo $URL; ?>/delete?id=<?php echo $product->getProductId(); ?>" type="button"
+                        id="Delete"> Delete </a>
+                </td>
+            </tr>
+
+        <?php } ?>
+    </table>
+</div>

@@ -1,0 +1,49 @@
+<?php
+//$banner = Mage::getModel('banner/banner')->getActiveBanner();
+//foreach ($banner as $bannerItem) {
+//    $image = $bannerItem->getBannerImage();   ?>
+<?php
+//}
+?>
+<!-- <img src="<?php //echo Mage::getBaseUrl("media/banner/$image")   ?>" style="width:100%;"> -->
+
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+
+<?php
+$activeBanners = Mage::getModel('banner/banner')->getActiveBanner();
+?>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <?php foreach ($activeBanners as $banner): ?>
+            <div class="swiper-slide">
+                <img src="<?php echo $this->getUrl('media/banner/') . $banner->getBannerImage(); ?>"
+                    alt="<?php echo $banner->getBannerText(); ?>" class="img-fluid">
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <!-- Add pagination bullets -->
+    <div class="swiper-pagination"></div>
+</div>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+</script>

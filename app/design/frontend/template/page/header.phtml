@@ -1,0 +1,71 @@
+<header>
+    <div class="page-header">
+        <div class="logo">
+            <a href="<?php echo $this->getUrl(''); ?>"><img id="headlogo" src=<?php echo $this->getUrl('') . "skin/images/icon.png" ?> alt="Your Logo"></a>
+        </div>
+        <div class="buttondiv">
+            <div class="btn row">
+                <a href="<?php echo $this->getUrl(''); ?>" style="--navAni:5">Home</a>
+            </div>
+            <div class="btn row">
+                <a href="<?php echo $this->getUrl(''); ?>" style="--navAni:5">About</a>
+            </div>
+            <div class="btn row">
+                <div class="pill-nav" id="myDIV">
+                    <ul>
+                        <div class="dropdown">
+                            <a class="btn" href="<?php echo $this->getUrl('catalog/category/view');?>"> Shop </a>
+                            <div class="dropdown-content dropdownDiv">
+                                <?php
+                                foreach ($this->getCatalogCategory() as $category):
+                                ?>
+                                <a
+                                    href="<?php echo $this->getUrl('catalog/category/view?id=') . $category->getCategoryId(); ?>">
+                                    <?php echo $category->getCategoryName(); ?>
+                                </a>
+                                <?php endforeach;  ?>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
+            </div>
+            <div class="btn row">
+                <a href="<?php echo $this->getUrl(''); ?>" style="--navAni:5">Contact</a>
+            </div>
+            <!--<div class="btn row">
+                <a href="<?php //echo $this->getUrl('cart');         ?>" style="--navAni:5">Cart</a>
+            </div>-->
+            <?php if ($this->userLogin()): ?>
+                <div class="btn row sign">
+                    <!-- <h5>Welcome
+                        <?php //echo $this->getCustomerName();              ?>
+                    </h5> -->
+                    <a href="<?php echo $this->getUrl('customer/Account/dashboard'); ?>" style="--navAni:5"><img id="logout"
+                            src=<?php echo $this->getUrl('') . "skin/images/user.png" ?> alt="Your Logo"></a>
+                </div>
+            <?php else: ?>
+                <div class="btn row sign">
+                    <a href="<?php echo $this->getUrl('customer/Account/login'); ?>" style="--navAni:5"><span> Sign
+                            in</span><img id="login" src=<?php echo $this->getUrl('') . "skin/images/user.png" ?>
+                            alt="Your Logo"></a>
+                </div>
+            <?php endif; ?>
+
+            <!-- <div class="btn row">
+                <a href="<?php //echo $this->getUrl('Admin/user/login');                     ?>" style="--navAni:5"><button
+                        type="button">Admin</button></a>
+            </div> -->
+        </div>
+</header>
+<script>
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('header');
+
+        // Add a class to the header when scrolling down
+        if (window.scrollY > 0) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>

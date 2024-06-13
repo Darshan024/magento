@@ -1,0 +1,268 @@
+<?php
+// $customerId = $this->getCustomerId();
+// $quoteId = $this->getQuoteId();
+// $addressData = $this->getCustomerAddress();
+$addressData = $this->getCustomerAddress();
+// print_r($addressData);
+// print_r($addressData->getBillingCity());
+?>
+<div class="responsive main-box">
+    <div class="first">
+        <div class="billingAddress">
+            <h2>Billing Address</h2>
+            <hr>
+        </div>
+        <?php if (!empty ($addressData)): ?>
+            <?php foreach ($addressData->getData() as $addValue) { ?>
+                <div class="addressBoxes">
+                    <div id="asdasdasdasd" class="address-cards"
+                        data-json='{"billing_address":"<?php echo $addValue->getBillingAddress(); ?>","billing_city":"<?php echo $addValue->getBillingCity(); ?>","billing_region":"<?php echo $addValue->getBillingRegion(); ?>","billing_country":"<?php echo $addValue->getBillingCountry(); ?>","billing_phone":"<?php echo $addValue->getBillingPhone(); ?>"}'>
+                        <p>Address :
+                            <?php echo $addValue->getBillingAddress() ?>
+                        </p>
+                        <p>City :
+                            <?php echo $addValue->getBillingCity() ?>
+                        </p>
+                        <p>Region :
+                            <?php echo $addValue->getBillingRegion() ?>
+                        </p>
+                        <p>Country :
+                            <?php echo $addValue->getBillingCountry() ?>
+                        </p>
+                        <p>Phone No:
+                            <?php echo $addValue->getBillingPhone() ?>
+                        </p>
+                    </div>
+
+                </div>
+            <?php } ?>
+        <?php endif; ?>
+    </div>
+    <div class="second">
+        <form action="<?php echo Mage::getBaseUrl('sales/quote/save'); ?>" method="POST">
+            <div>
+                <div class="container">
+                    <div class="title">Address</div>
+                    <div class="content">
+                        <div class="check-box">
+                            <input type="checkbox" id="copyAddress">
+                            <label for="copyAddress">Shipping Address Same As Billing</label>
+                        </div>
+                        <!-- <div class="email-box">
+                            <label for="email">Email : </label>
+                            <input type="text" name="address[email]" id="email">
+                        </div> -->
+
+                        <div class="user-details">
+                            <div class="billing">
+                                <div class="input-box">
+                                    <label class="details" for="billing_city">Billing City : </label>
+                                    <input type="text" name="address[billing_city]" id="billing_city">
+                                </div>
+
+                                <div class="input-box">
+                                    <label class="details" for="billing_region">Billing Region : </label>
+                                    <input type="text" name="address[billing_region]" id="billing_region">
+                                </div>
+
+                                <div class="input-box">
+                                    <label class="details" for="billing_country">Billing Country : </label>
+                                    <input type="text" name="address[billing_country]" id="billing_country">
+                                </div>
+
+                                <div class="input-box">
+                                    <label class="details" for="billing_phone">Billing Phone : </label>
+                                    <input type="number" name="address[billing_phone]" id="billing_phone">
+                                </div>
+                                <div class="input-box">
+                                    <label class="details" for="billing_address">Billing Address : </label>
+                                    <textarea name="address[billing_address]" id="billing_address" cols="30"
+                                        rows="5"></textarea>
+                                </div>
+                            </div>
+                            <div class="shipping">
+                                <div class="input-box">
+                                    <label class="details" for="shipping_city">Shipping City</label>
+                                    <input type="text" name="address[shipping_city]" id="shipping_city">
+                                </div>
+                                <div class="input-box">
+                                    <label class="details" for="shipping_region">Shipping Region</label>
+                                    <input type="text" name="address[shipping_region]" id="shipping_region">
+                                </div>
+
+                                <div class="input-box">
+                                    <label class="details" for="shipping_country">Shipping Country : </label>
+                                    <input type="text" name="address[shipping_country]" id="shipping_country">
+                                </div>
+                                <div class="input-box">
+                                    <label class="details" for="shipping_phone">Shipping Phone : </label>
+                                    <input type="number" name="address[shipping_phone]" id="shipping_phone">
+                                </div>
+                                <div class="input-box">
+                                    <label class="details" for="shipping_address">Shipping Address : </label>
+                                    <textarea name="address[shipping_address]" id="shipping_address" cols="30"
+                                        rows="5"></textarea>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script type="text/javascript">
+                $('.address-cards').each((i, e) => {
+                    console.log($(e).attr('data-json'))
+                    $(e).click(() => {
+                        var _data = JSON.parse($(e).attr('data-json'))
+                        for (var key in _data) {
+                            if (_data.hasOwnProperty(key)) {
+                                $('#' + key).val(_data[key]);
+                            }
+                        }
+                        // $('#billing_address').val(_data.billing_address);
+                        // $('#billing_city').val(_data.billing_city);
+                        // $('#billing_country').val(_data.billing_country);
+                    });
+                })
+            </script>
+            <script>
+                document.getElementById('copyAddress').addEventListener('change', function () {
+                    var checked = this.checked;
+                    if (checked) {
+                        // Copy billing address to shipping address fields
+                        document.getElementById('shipping_address').value = document.getElementById('billing_address').value;
+                        document.getElementById('shipping_city').value = document.getElementById('billing_city').value;
+                        document.getElementById('shipping_region').value = document.getElementById('billing_region').value;
+                        document.getElementById('shipping_country').value = document.getElementById('billing_country').value;
+                        document.getElementById('shipping_phone').value = document.getElementById('billing_phone').value;
+                    } else {
+                        // Clear shipping address fields
+                        document.getElementById('shipping_address').value = '';
+                        document.getElementById('shipping_city').value = '';
+                        document.getElementById('shipping_region').value = '';
+                        document.getElementById('shipping_country').value = '';
+                        document.getElementById('shipping_phone').value = '';
+                    }
+                });
+            </script>
+            <div class="dis">
+                <!-- <div class="payment">
+                    <h2>Payment Options</h2>
+                    <div class="form-group">
+                        <div class="field-group">
+                            <label for="payment_options" class="label-payment-options">Payment Options:</label>
+                            <select id="payment_options" name="sales_quote_payment_method[payment_options]" required
+                                class="select-payment-options">
+                                <option value="cod">Cash on Delivery (COD)</option>
+                                <option value="creditcard">Credit Card</option>
+                                <option value="upi">UPI</option>
+                            </select>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="payment">
+                    <h2>Payment Options</h2>
+                    <div class="form-group">
+                        <div class="field-group">
+                            <label for="payment_options" class="label-payment-options">Payment Options:</label>
+                            <select id="payment_options" name="sales_quote_payment_method[payment_method]" required
+                                class="select-payment-options">
+                                <?php $paymentOptions = $this->getPaymentOption(); ?>
+                                <?php foreach ($paymentOptions as $key => $value) { ?>
+                                    <option value="<?php echo $key ?>">
+                                        <?php echo $value ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Credit Card Input Fields -->
+                    <div class="form-group input-creditcard" id="creditcard-fields">
+                        <label for="card_number">Card Number:</label>
+                        <input type="text" id="card_number" name="sales_quote_payment_method[card_number]"
+                            placeholder="Enter card number" required>
+                        <!-- <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="sales_quote_payment_method[cvv]" placeholder="Enter CVV"
+                            required> -->
+                    </div>
+
+                    <!-- UPI Input Field -->
+                    <div class="form-group input-upi" id="upi-field">
+                        <label for="upi_id">UPI ID:</label>
+                        <input type="text" id="upi_id" name="sales_quote_payment_method[upi_id]"
+                            placeholder="Enter UPI ID" required>
+                    </div>
+
+
+                </div>
+
+                <script>
+                    var paymentForm = document.getElementById('paymentForm');
+                    var cardNumberInput = document.getElementById('card_number');
+                    // var cvvInput = document.getElementById('cvv');
+                    var upiIdInput = document.getElementById('upi_id');
+                    var paymentOptions = document.getElementById('payment_options');
+
+                    function resetForm() {
+                        cardNumberInput.value = '';
+                        // cvvInput.value = '';
+                        upiIdInput.value = '';
+                        cardNumberInput.disabled = true;
+                        // cvvInput.disabled = true;
+                        upiIdInput.disabled = true;
+                        document.getElementById('creditcard-fields').style.display = 'none';
+                        document.getElementById('upi-field').style.display = 'none';
+                    }
+
+                    resetForm();
+
+                    paymentOptions.addEventListener('change', function () {
+                        resetForm();
+
+                        var selectedOption = this.value;
+                        if (selectedOption === 'creditcard') {
+                            cardNumberInput.disabled = false;
+                            // cvvInput.disabled = false;
+                            document.getElementById('creditcard-fields').style.display = 'block';
+                        } else if (selectedOption === 'upi') {
+                            upiIdInput.disabled = false;
+                            document.getElementById('upi-field').style.display = 'block';
+                        }
+                    });
+
+                    paymentForm.addEventListener('submit', function (event) {
+                        var selectedOption = paymentOptions.value;
+                        if ((selectedOption === 'creditcard' && (cardNumberInput.value === '')) ||
+                            (selectedOption === 'upi' && upiIdInput.value === '')) {
+                            event.preventDefault();
+                            alert('Please fill in all required fields.');
+                        }
+                    });
+                </script>
+                <div class="shipping-method">
+
+                    <h2>Shipping Method</h2>
+
+                    <div class="form-group">
+                        <div class="field-group">
+                            <label for="shipping_options" class="label-shipping-options">Shipping Options:</label>
+                            <select id="shipping_options" name="sales_quote_shipping_method[shipping_method]" required
+                                class="select-shipping-options">
+                                <?php $shippingOptions = $this->getShippingOption(); ?>
+                                <?php foreach ($shippingOptions as $key => $value) { ?>
+                                    <option value="<?php echo $key ?>">
+                                        <?php echo $value ?>
+                                    </option>
+                                <?php } ?>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Place Order">
+            </div>
+        </form>
+    </div>
+</div>

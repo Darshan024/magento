@@ -1,0 +1,52 @@
+<?php $seasons = $this->getSeasons();
+$fruits = $this->getFruits();
+// print_r($fruits->getData());
+?>
+<!-- <form method="POST" action="<?php //echo Mage::getBaseUrl('SeasonFruits/SeasonFruits/save');  ?>"> -->
+<label for="season">Seasons :</label>
+<select name="id" id="season" onchange="submitForm(this)">
+    <?php foreach ($seasons->getData() as $_season): ?>
+        <option value="<?php echo $_season->getId() ?> " <?php echo $this->getId() == $_season->getId() ? 'selected' : ''; ?>>
+            <?php echo $_season->getName(); ?>
+        </option>
+    <?php endforeach; ?>
+</select>
+<!-- <select name="season[name]" id="fruits">
+        <?php //foreach ($fruits->getData() as $_fruits): ?>
+            <option value="<?php //echo $_fruits->getName() ?>">
+                <?php //echo $_fruits->getName(); ?>
+            </option>
+        <?php //endforeach; ?>
+    </select> -->
+<!-- <button onclick="fruitsData()">Submit</button> -->
+<div>
+<label for="season">Fruits :</label>
+<span id="fruits"></span></div>
+
+<!-- <input type="submit"> -->
+<!-- </form> -->
+<script type="text/javascript">
+    function submitForm(selectElement) {
+        var selectedValue = selectElement.value;
+        // $data =selectedValue;
+        let obj = new XMLHttpRequest();
+        obj.onreadystatechange = function () {
+            if (obj.readyState == 4 && obj.status == 200) {
+                // console.log(selectedValue);
+                document.getElementById('fruits').innerHTML = obj.responseText;
+            }
+        }
+        obj.open("GET", `save?id=${selectedValue}`, true);
+        obj.send();
+    }
+</script>
+<!-- 
+<script type="text/javascript">
+    function fruitsData() {
+        document.getElementById("season").addEventListener("click", function (event) {
+            event.preventDefault()
+        });
+        var season = document.getElementById("season");
+        console.log(season);
+    }
+</script> -->

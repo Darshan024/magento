@@ -1,0 +1,96 @@
+<?php
+$customer = $this->getCustomer();
+?>
+<div class="tbl">
+    <table border="1px">
+        <tr>
+            <th>Customer Id</th>
+            <th>Customer Email</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Billing Address</th>
+            <th>Billing City</th>
+            <th>Billing Region</th>
+            <th>Billing Country</th>
+            <th>Billing Phone</th>
+            <th>Shipping Address</th>
+            <th>Shipping City</th>
+            <th>Shipping Region</th>
+            <th>Shipping Country</th>
+            <th>Shipping Phone</th>
+            <th>Password</th>
+        </tr>
+        <?php foreach (($this->getCustomer()) as $customer): ?>
+            <tr>
+                <td>
+                    <?php echo $customer->getCustomerId(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getCustomerEmail(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getFirstName(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getLastName(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getBillingAddress(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getBillingCity(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getBillingRegion(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getBillingCountry(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getBillingPhone(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getShippingAddress(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getShippingCity(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getShippingRegion(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getShippingCountry(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getShippingPhone(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getPassword(); ?>
+                </td>
+                <td>
+                    <?php echo $customer->getStetus(); ?>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </table>
+</div>
+<div class="btn row">
+    <!-- <h5>Welcome
+                <?php //echo $this->getCustomerName();       ?>
+            </h5> -->
+    <a href="<?php echo $this->getUrl('customer/Account/logout'); ?>" style="--navAni:5"> Log Out</a>
+</div>
+<div class="btn row">
+    <div class="pill-nav" id="myDIV">
+        <ul>
+            <div class="dropdown">
+                <a class="btn"> profile </a>
+                <div class="dropdown-content dropdownDiv">
+                    <a href="<?php echo Mage::getBaseUrl("cart"); ?>">Cart</a>
+                    <a href=" <?php echo Mage::getBaseUrl("customer/view"); ?>">Order History</a>
+                    <a href=" <?php echo Mage::getBaseUrl(""); ?>"></a>
+                </div>
+            </div>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,143 @@
+body {
+  background: #b3e5eea6;
+}
+
+.wrapper {
+  height: 390px;
+  width: 890px;
+  padding-top: 0px;
+  margin: 80px auto 40px;
+  border-radius: 7px 7px 7px 7px;
+  /* VIA CSS MATIC https://goo.gl/cIbnS */
+  -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+}
+.imgproduct {
+  width: 100%;
+}
+.product-img {
+  float: left;
+  height: 390px;
+  width: 445px;
+}
+
+.product-img img {
+  border-radius: 7px 0 0 7px;
+  height: 100%;
+}
+
+.product-info {
+  float: left;
+  height: 390px;
+  width: 445px;
+  border-radius: 0 7px 10px 7px;
+  background-color: #ffffff;
+}
+
+.product-text {
+  height: 196px;
+  width: 445px;
+}
+.quantity-box {
+  margin-top: 24px;
+}
+.product-text h1 {
+  margin: 25px 0 0 50px;
+  padding-top: 17px;
+  font-size: 34px;
+  color: #474747;
+}
+
+.product-text h1,
+.product-price-btn p {
+  font-family: "Bentham", serif;
+}
+
+.product-text h2 {
+  margin: 0 0 47px 38px;
+  font-size: 13px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #d2d2d2;
+  letter-spacing: 0.2em;
+}
+
+.product-text p {
+  /* height: 125px; */
+  margin: 16px 40px 0 50px;
+  font-family: "Playfair Display", serif;
+  color: #8d8d8d;
+  line-height: 1.7em;
+  font-size: 15px;
+  font-weight: lighter;
+  overflow: hidden;
+}
+
+.product-price-btn {
+  height: 72px;
+  width: 200px;
+  margin-top: 0px;
+  position: relative;
+}
+
+.product-price-btn p {
+  display: inline-block;
+  /* position: absolute;
+  top: -50px; */
+  height: 50px;
+  font-family: "Trocchi", serif;
+  margin: 0 0 0 0px;
+  font-size: 28px;
+  font-weight: lighter;
+  color: #474747;
+}
+
+.quantity-label {
+  display: inline-block;
+  height: 50px;
+  margin: 0px 0px 0px 50px;
+  font-family: "Suranna", serif;
+  font-size: 21px;
+}
+.qty {
+  height: 20px;
+  width: 100px;
+  border-radius: 20px;
+  padding-left: 10px;
+  margin-left: 10px;
+}
+span {
+  display: inline-block;
+  height: 50px;
+  margin: 13px 0px 0px 50px;
+  font-family: "Suranna", serif;
+  font-size: 21px;
+}
+
+.add-to-cart {
+  float: right;
+  display: inline-block;
+  height: 50px;
+  width: 176px;
+  margin: -62px 42px 0px 0px;
+  box-sizing: border-box;
+  border: transparent;
+  border-radius: 60px;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: #ffffff;
+  background-color: #9cebd5;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  font-weight: 400;
+}
+
+.add-to-cart:hover {
+  background-color: lightseagreen;
+}

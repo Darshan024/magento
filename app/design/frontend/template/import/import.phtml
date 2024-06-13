@@ -1,0 +1,26 @@
+<div class="container">
+    <h2>CSV File Operations</h2>
+
+    <!-- Form for uploading CSV file -->
+    <?php //$csvFile = Mage::getBaseUrl('import/')?>
+    <form action="<?php echo $this->getUrl('admin/import/upload'); ?>" method="post" enctype="multipart/form-data">
+        <label for="file">Upload CSV File:</label>
+        <label class="custom-file-upload">
+            <input type="file" name="csv_file" id="file">Upload CSV File
+        </label>
+        <input type="submit" name="submit" value="Upload" class="action-btn">
+    </form>
+
+    <!-- Container for the buttons -->
+    <div class="button-container">
+        <!-- Form for reading CSV file -->
+        <form action="<?php echo Mage::getBaseUrl('admin/import/read'); ?>" method="POST">
+            <input type="submit" name="read" value="Read CSV File" class="action-btn">
+        </form>
+
+        <!-- Form for importing CSV file -->
+        <form action="<?php echo Mage::getBaseUrl('admin/import/import'); ?>" method="POST">
+            <input type="submit" name="import" value="Import CSV File" class="action-btn">
+        </form>
+    </div>
+</div>

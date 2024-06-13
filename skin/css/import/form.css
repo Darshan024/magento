@@ -1,0 +1,52 @@
+
+.form {
+    width: 50%;
+    margin: 0 auto; 
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+
+.form h2 {
+    margin-top: 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+.form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+@media screen and (max-width: 600px) {
+    .form {
+        width: 80%;
+    }
+}

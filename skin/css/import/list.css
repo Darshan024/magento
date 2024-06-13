@@ -1,0 +1,49 @@
+.list {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.list table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.list th {
+    background-color: #f2f2f2;
+    padding: 10px;
+    text-align: left;
+}
+
+.list td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+.list a {
+    display: inline-block;
+    padding: 6px 12px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 4px;
+}
+
+.list a:hover {
+    background-color: #0056b3;
+}
+
+.list .read-link {
+    background-color: #28a745;
+}
+
+.list .read-link:hover {
+    background-color: #218838;
+}
+
+.list .import-link {
+    background-color: #dc3545;
+}
+
+.list .import-link:hover {
+    background-color: #c82333;
+}

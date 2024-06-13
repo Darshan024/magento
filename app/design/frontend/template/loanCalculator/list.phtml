@@ -1,0 +1,38 @@
+<?php
+
+$productCollection = $this->getList();
+?>
+<div class="tbl">
+    <table border="1px">
+        <tr>
+            <th>User Name</th>
+            <th>id</th>
+            <th>Loan amount</th>
+            <th>monthaly amount</th>
+            <th>term</th>
+            <th>banks rate</th>
+        </tr>
+        <?php
+        foreach ($productCollection->getData() as $product) { ?>
+            <tr>
+                <td>
+                    <?php echo $product->getUserName(); ?>
+                </td>
+                <td>
+                    <?php echo $product->getId(); ?>
+                </td>
+                <td>
+                    <?php echo $product->getLoanAmount(); ?>
+                </td>
+                <td>
+                    <?php echo $product->getMonthlyAmount(); ?>
+                </td>
+                <td>
+                    <?php echo $product->getTerm(); ?>
+                </td>
+                <td>
+                    <?php echo $product->getResult(); ?>
+                </td>
+            <?php } ?>
+    </table>
+</div>

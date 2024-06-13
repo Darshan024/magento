@@ -1,0 +1,112 @@
+<div class="form">
+    <h2>Product Form</h2>
+    <form method="POST" action="<?php echo $this->getUrl('admin/catalog_product/save') ?>"
+        enctype="multipart/form-data">
+        <?php $productModel = $this->getProductForm(); ?>
+        <?php $cat = $this->getCategoryList(); ?>
+        <div class="row">
+            <input type="hidden" name="catalog_product[product_id]"
+                value="<?php echo $productModel->getProductId(); ?>">
+        </div>
+        <div class="row">
+            <label for="sku">SKU : </label>
+            <input type="text" name="catalog_product[sku]" id="sku" value="<?php echo $productModel->getSku(); ?>">
+        </div>
+        <div class="row">
+            <label for="name">Name : </label>
+            <input type="text" name="catalog_product[name]" id="name" value="<?php echo $productModel->getName(); ?>">
+        </div>
+
+        <div class=" row">
+            <label for="color">Color : </label>
+            <input type="text" name="catalog_product[color]" id="color"
+                value="<?php echo $productModel->getColor(); ?>">
+        </div>
+
+        <div class="row">
+            <label for="size">Size : </label>
+            <input type="text" name="catalog_product[size]" id="size" value="<?php echo $productModel->getSize(); ?>">
+        </div>
+
+        <div class="row">
+            <label for="description">Description :
+            </label>
+            <textarea name="catalog_product[description]" id="description" cols="30"
+                rows="5"><?php echo $productModel->getDescription(); ?></textarea>
+        </div>
+
+        <div class="row">
+            <label for="image_link">Image Link : </label>
+            <input type="file" name="image_link" id="image_link" value="<?php echo $productModel->getImageLink(); ?>">
+        </div>
+
+        <div class="row">
+            <label for="link">Link : </label>
+            <input type="text" name="catalog_product[link]" id="link" value="<?php echo $productModel->getLink(); ?>">
+        </div>
+        <div class="row">
+            <label for="category_id">Category:</label>
+            <select name="product[category_id]">
+                <?php foreach ($cat->getData() as $category): ?>
+                    <option value="<?php echo $category->getCategoryId() ?>" <?php echo $category->getCategoryId() == $productModel->getCategoryId() ? 'selected' : ''; ?>>
+                        <?php echo $category->getCategoryName(); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+        <div class="row">
+            <label for="price">Price : </label>
+            <input type="number" name="catalog_product[price]" id="price"
+                value="<?php echo $productModel->getPrice(); ?>">
+        </div>
+        <div class="row">
+            <label for="inventory">Inventory : </label>
+            <input type="number" name="catalog_product[inventory]" id="inventory"
+                value="<?php echo $productModel->getInventory(); ?>">
+        </div>
+
+        <div class="row">
+            <label for="mfr_cost">MFR Cost</label>
+            <input type="number" name="catalog_product[mfr_cost]" id="mfr_cost"
+                value="<?php echo $productModel->getMfrCost(); ?>">
+        </div>
+
+        <div class="row">
+            <label for="shipping_cost">Shipping Cost</label>
+            <input type="number" name="catalog_product[shipping_cost]" id="shipping_cost"
+                value="<?php echo $productModel->getShippingCost(); ?>">
+        </div>
+
+        <div class="row">
+            <label for="total_cost">Total Cost</label>
+            <input type="number" name="catalog_product[total_cost]" id="total_cost"
+                value="<?php echo $productModel->getTotalCost(); ?>">
+        </div>
+
+        <div class="row">
+            <label for="margin_percentage">Margin Percentage : </label>
+            <input type="number" name="catalog_product[margin_percentage]" id="margin_percentage"
+                value="<?php echo $productModel->getMarginPercentage(); ?>">
+        </div>
+
+        <div class="row">
+            <label for="min_price">Min Price : </label>
+            <input type="number" name="catalog_product[min_price]" id="min_price"
+                value="<?php echo $productModel->getMinPrice(); ?>">
+        </div>
+
+        <div class="row">
+            <label for="status">Status : </label>
+            <!-- <input type="text" name="catalog_product[status]" id="status"
+                value=<?php //echo $productModel->getStatus();                   ?>"> -->
+            <select id="status" name="catalog_product[status]">
+                <option value="1" <?php echo $productModel->getStatus() == 1 ? 'selected' : '' ?>>Enabled</option>
+                <option value="0" <?php echo $productModel->getStatus() == 0 ? 'selected' : '' ?>>Disabled</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <input type="submit" name="submit" value="Submit">
+        </div>
+    </form>
+</div>

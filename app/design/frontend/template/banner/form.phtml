@@ -1,0 +1,45 @@
+<?php $banner = $this->getBannerForm();
+$imagePath = Mage::getBaseUrl("media/banner/") . $banner->getBannerImage();
+
+?>
+<div class="form">
+    <h2>Banner Upload Form</h2>
+    <form action="<?php echo $this->getUrl('admin/banner/save') ?>" method="post" enctype="multipart/form-data">
+
+
+        <div class="row">
+            <input type="hidden" name="banner[banner_id]" value="<?php echo $banner->getBannerId(); ?>">
+        </div>
+        <div class=" row">
+            <label for="image">Banner Image:</label>
+            <input type="file" name="banner_image" value="<?php echo $banner->getBannerImage(); ?>" id="image"
+                accept="image/*"><br>
+            <?php if ($banner->getBannerImage()) {
+                echo '<label for="image">Image Preview:</label> <img class="bannerimg" src="' . $imagePath . '">';
+            } ?>
+        </div>
+        <div class=" row">
+            <label for="sku">Status : </label>
+            <!-- <input type="text" name="banner[status]" value="<?php //echo $banner->getStatus();             ?>" id="staus"> -->
+            <select id="status" name="banner[status]">
+                <option value="1" <?php echo $banner->getStatus() == 1 ? 'selected' : '' ?>>Enabled</option>
+                <option value="0" <?php echo $banner->getStatus() == 0 ? 'selected' : '' ?>>Disabled</option>
+            </select>
+        </div>
+
+        <div class="row">
+            <label for="sku">Show On : </label>
+            <select id="show_on" name="banner[show_on]">
+                <option value="Homepage" <?php echo ($banner->getShowOn() == 'Homepage') ? 'selected' : ''; ?>> Home Page
+                </option>
+                <option value="Cartpage" <?php echo ($banner->getShowOn() == 'Cartpage') ? 'selected' : ''; ?>> Cart Page
+                </option>
+                <option value="Checkoutpage" <?php echo ($banner->getShowOn() == 'Checkoutpage') ? 'selected' : ''; ?>>
+                    Checkout Page </option>
+            </select>
+        </div>
+        <div class="row">
+            <input type="submit" name="submit" value="Submit">
+        </div>
+    </form>
+</div>

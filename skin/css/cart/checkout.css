@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  color: rgb(223, 223, 223);
+  font-family: "Outfit", sans-serif;
+  align-items: center;
+  background-color: #cdeef3;
+}
+.wrapper {
+  padding-top: 63px;
+}
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  max-width: 796px;
+  width: 100%;
+  background-color: #2b2e38;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.container .title {
+  font-size: 35px;
+  font-weight: 500;
+  text-align: center;
+  color: #cdeef3;
+}
+
+.content form .user-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+.user-details {
+  display: flex;
+  margin: 20px 0 12px 0;
+}
+form .check-box {
+  margin: 20px 0 12px 0;
+  /* width: 100%; */
+}
+.check-box input {
+  /* height: 22px; */
+  /* font-size: 21px; */
+  /* margin: 4px 2px 0px 2px; */
+  width: 5%;
+  font-size: 0px;
+  border-radius: 15px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  size: 23px;
+}
+.email-box input {
+  width: 99%;
+  height: 37px;
+  font-size: 0px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+}
+input#card_number {
+  width: 183px;
+  border: 1px solid black;
+  border-radius: 6px;
+  margin: 0px 10px 0px 28px;
+  padding: 0px 10px 0px 10px;
+}
+input#upi_id {
+  margin: 0px 10px 0px 95px;
+  padding: 0px 0px 0px 6px;
+  width: 180px;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+form .user-details .input-box {
+  margin-bottom: 15px;
+  width: 90%;
+}
+
+form .input-box span.details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+textarea {
+  outline: none;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input {
+  height: 37px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid,
+textarea {
+  border-color: #9b59b6;
+}
+
+form .button {
+  height: 45px;
+  margin: 20px 0px 0px 130px;
+}
+form .button input {
+  height: 100%;
+  width: 250px;
+  border-radius: 5px;
+  border: none;
+  color: #4bb19b;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: #1d4b52;
+}
+form .button input:hover {
+  background-color: #181f1d;
+}
+
+@media (max-width: 584px) {
+  .container {
+    max-width: 100%;
+  }
+  form .user-details .input-box {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category {
+    width: 100%;
+  }
+  .content form .user-details {
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar {
+    width: 5px;
+  }
+}
+@media (max-width: 459px) {
+  .container .content .category {
+    flex-direction: column;
+  }
+}
+.responsive {
+  display: flex;
+  padding: 30px;
+  border-radius: 20px;
+}
+.addressBoxes {
+  color: #000000;
+  border-radius: 20px;
+  margin: 32px 0px 10px 0px;
+  padding: 13px 10px 10px 15px;
+  background-color: #aabfdd;
+}
+.first {
+  width: 30%;
+}
+
+.second {
+  width: 70%;
+  /* background-color: blueviolet; */
+}
+.dis {
+  display: flex;
+  /* background-color: brown; */
+}
+.payment {
+  height: 130px;
+  color: #000000;
+  background-color: #aabfdd;
+  border-radius: 10px;
+  width: 50%;
+  margin: 15px 0px 15px 50px;
+  padding: 30px 0px 15px 50px;
+}
+.shipping-method {
+  height: 130px;
+  color: #000000;
+  background-color: #aabfdd;
+  border-radius: 10px;
+  width: 50%;
+  margin: 15px 0px 15px 50px;
+  padding: 30px 0px 15px 50px;
+}
+.billing {
+  margin-right: 10px;
+}
+.shipping {
+  margin-right: -30px;
+}
+.main-box {
+  border-radius: 20px;
+}
+.select-shipping-options {
+  border-radius: 6px;
+}
+.select-payment-options {
+  border-radius: 6px;
+}
+.address-cards {
+  display: flex;
+  flex-direction: column;
+}
+.address-cards span {
+  display: flex;
+  flex-direction: column;
+}
+.billingAddress {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: -18px;
+  font-size: 18px;
+  color: #2b2e38;
+}

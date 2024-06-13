@@ -1,0 +1,21 @@
+sku,name,color,size,description,image_link,link,category_id,price,inventory,mfr_cost,shipping_cost,total_cost,margin_percentage,min_price,status
+SKU001,sofa1,Red,Medium,Description 1,sofa1.jpg,link1,1,25,985,12.5,5,17.5,20,15.99,0
+SKU002,sofa2,Blue,Large,"We are sure you will EASILY find the right one(s) for your web projects by accessing this collection of over 40 templates.nnTons of different designs; modern, creative, simple and minimal.nnSomething for everyone.nn",sofa2.jpg,link2,1,30,902,18.5,5,23.5,25,24.99,0
+SKU003,sofa3,Green,Small,Description 3,sofa3.jpg,link3,1,39.99,988,25,5,30,18,34.99,0
+SKU004,sofa4,Yellow,Medium,Description 4,sofa4.jpg,link4,1,59.99,995,40,8,48,15,54.99,0
+SKU005,sofa5,White,Small,Description 5,sofa5.jpg,link5,1,79.99,996,60,10,70,30,74.99,0
+SKU006,sofa6,Orange,Large,Description 6,sofa6.jpg,link6,1,49.99,997,30,5,35,22,44.99,0
+SKU007,sofa7,Brown,Medium,Description 7,sofa7.jpg,link7,1,69.99,995,45,7,52,18,64.99,0
+SKU008,sofa8,Gray,,Description 8,sofa8.jpg,link8,1,99.99,998,75,12,87,25,94.99,0
+SKU009,sofa9,Pink,Large,Description 9,sofa9.jpg,link9,1,79.99,998,55,10,65,20,74.99,0
+SKU010,sofa10,Cyan,Medium,Description 10,sofa10.jpg,link10,1,89.99,998,70,15,85,30,84.99,1
+SKU011,sofa11,Magenta,Small,Description 11,sofa11.jpg,link11,1,49.99,999,30,5,35,22,44.99,0
+SKU012,sofa12,Teal,Large,Description 12,sofa12.jpg,link12,1,69.99,999,45,7,52,18,64.99,0
+SKU013,Product 13,Lime,Medium,Description 13,jeans1.jpg,link13,2,99.99,1000,75,12,87,25,94.99,0
+SKU014,Product 14,Indigo,Small,Description 14,jeans2.jpg,link14,2,79.99,998,55,10,65,20,74.99,1
+SKU015,Product 15,Olive,Large,Description 15,jeans3.jpg,link15,2,89.99,998,70,15,85,30,84.99,1
+SKU016,Product 16,Maroon,Medium,Description 16,jeans4.jpg,link16,2,49.99,1000,30,5,35,22,44.99,1
+SKU017,Product 17,Turquoise,Large,Description 17,jeans5.jpg,link17,2,69.99,999,45,7,52,18,64.99,0
+SKU018,Product 18,Slate,Small,Description 18,jeans6.jpg,link18,2,99.99,998,75,12,87,25,94.99,1
+SKU019,Product 19,Purple,Large,Description 19,jeans7.jpg,link19,2,89.99,1000,65,15,80,20,79.99,0
+SKU020,Product 20,Black,,Description 20,jeans8.jpg,link20,2,49.99,997,30,8,35,22,44.99,1

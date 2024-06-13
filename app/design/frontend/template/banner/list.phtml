@@ -1,0 +1,44 @@
+<?php
+$bannerCollection = $this->getBanner();
+$URL = $this->getUrl('admin/banner');
+
+?>
+<div class="tbl">
+    <table border="1px">
+        <tr>
+            <th>Banner Id</th>
+            <th>Banner Image</th>
+            <th>Status</th>
+            <th>Show On</th>
+            <th colspan=2>Action</th>
+        </tr>
+        <?php
+        foreach ($bannerCollection->getData() as $banner) { ?>
+            <tr>
+                <td>
+                    <?php echo $banner->getBannerId(); ?>
+                </td>
+                <td>
+                    <?php $a = $banner->getBannerImage(); ?>
+                    <img src="<?php echo Mage::getBaseUrl("media/banner/") . $a; ?>" style="width:200px;">
+                    <?php //echo $banner->getBannerImage(); ?>
+                </td>
+                <td>
+                    <?php echo $banner->getStetus(); ?>
+                </td>
+                <td>
+                    <?php echo $banner->getShowOn(); ?>
+                </td>
+                <td>
+                    <a href="<?php echo $URL; ?>/form?id=<?php echo $banner->getBannerId(); ?>" type="button" id="update">
+                        Update </a>
+                </td>
+                <td>
+                    <a href="<?php echo $URL; ?>/delete?id=<?php echo $banner->getBannerId(); ?>" type="button" id="Delete">
+                        Delete </a>
+                </td>
+            </tr>
+
+        <?php } ?>
+    </table>
+</div>
