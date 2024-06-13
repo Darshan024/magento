@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Ccc_Review>
+            <active>false</active>
+            <codePool>local</codePool>
+        </Ccc_Review>
+    </modules>
+</config>

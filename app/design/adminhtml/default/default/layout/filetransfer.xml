@@ -1,0 +1,17 @@
+<layout>
+    <adminhtml_filetransfer_index>
+        <reference name="content">
+            <block type="filetransfer/adminhtml_configuration" name="filetransfer_configuration" />
+        </reference>
+    </adminhtml_filetransfer_index>
+    <adminhtml_filetransfer_edit>
+        <reference name="content">
+            <block type="filetransfer/adminhtml_configuration_edit" name="configuration_edit"/>
+        </reference>
+    </adminhtml_filetransfer_edit>
+    <adminhtml_file_index>
+        <reference name="content">
+            <block type="filetransfer/adminhtml_file" name="file"/>
+        </reference>
+    </adminhtml_file_index>
+</layout>

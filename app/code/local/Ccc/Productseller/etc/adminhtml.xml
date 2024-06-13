@@ -1,0 +1,70 @@
+<config>
+    <menu>
+        <customer translate="title" module="productseller">
+            <title>Customers</title>
+            <sort_order>70</sort_order>
+            <children>
+                <seller translate="title" module="productseller">
+                    <title>Sellers</title>
+                    <action>adminhtml/seller/index</action>
+                    <sort_order>0</sort_order>
+                </seller>
+                <seller_report translate="title" module="productseller">
+                    <title>Sellers Report</title>
+                    <action>adminhtml/report/index</action>
+                    <sort_order>10</sort_order>
+                </seller_report>
+            </children>
+        </customer>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <customer>
+                        <children>
+                            <seller>
+                                <title>Seller</title>
+                                <sort_order>70</sort_order>
+                                <children>
+                                    <index>
+                                        <title>Show Grid</title>
+                                    </index>
+                                    <new>
+                                        <title>Can Add</title>
+                                    </new>
+                                    <edit>
+                                        <title>Can Edit</title>
+                                    </edit>
+                                    <delete>
+                                        <title>Can Delete</title>
+                                    </delete>
+                                </children>
+                            </seller>
+                            <seller_report>
+                                <title>Seller Report</title>
+                                <sort_order>80</sort_order>
+                                <children>
+                                    <index>
+                                        <title>Show Grid</title>
+                                    </index>
+                                </children>
+                            </seller_report>
+                        </children>
+                    </customer>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <productseller>
+                                        <title>Customers Section</title>
+                                    </productseller>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

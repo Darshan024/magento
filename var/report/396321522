@@ -1,0 +1,11 @@
+a:4:{i:0;s:28:"Invalid cron expression: */1";i:1;s:1437:"#0 C:\xampp\htdocs\my_magento\app\code\core\Mage\Cron\Model\Schedule.php(68): Mage::exception('Mage_Cron', 'Invalid cron ex...')
+#1 C:\xampp\htdocs\my_magento\app\code\community\Aoe\Scheduler\Model\Schedule.php(858): Mage_Cron_Model_Schedule->setCronExpr('*/1')
+#2 C:\xampp\htdocs\my_magento\app\code\community\Aoe\Scheduler\Model\Schedule.php(128): Aoe_Scheduler_Model_Schedule->setCronExpr('*/1')
+#3 C:\xampp\htdocs\my_magento\app\code\community\Aoe\Scheduler\Model\ScheduleManager.php(254): Aoe_Scheduler_Model_Schedule->initializeFromJob(Object(Aoe_Scheduler_Model_Job))
+#4 C:\xampp\htdocs\my_magento\app\code\community\Aoe\Scheduler\Model\ScheduleManager.php(165): Aoe_Scheduler_Model_ScheduleManager->generateSchedulesForJob(Object(Aoe_Scheduler_Model_Job))
+#5 C:\xampp\htdocs\my_magento\app\code\community\Aoe\Scheduler\Model\Observer.php(43): Aoe_Scheduler_Model_ScheduleManager->generateSchedules()
+#6 C:\xampp\htdocs\my_magento\app\code\core\Mage\Core\Model\App.php(1358): Aoe_Scheduler_Model_Observer->dispatch(Object(Varien_Event_Observer))
+#7 C:\xampp\htdocs\my_magento\app\code\core\Mage\Core\Model\App.php(1337): Mage_Core_Model_App->_callObserverMethod(Object(Aoe_Scheduler_Model_Observer), 'dispatch', Object(Varien_Event_Observer))
+#8 C:\xampp\htdocs\my_magento\app\Mage.php(451): Mage_Core_Model_App->dispatchEvent('default', Array)
+#9 C:\xampp\htdocs\my_magento\cron.php(81): Mage::dispatchEvent('default')
+#10 {main}";s:11:"script_name";s:9:"index.php";s:4:"skin";s:5:"admin";}

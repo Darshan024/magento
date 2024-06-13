@@ -1,0 +1,31 @@
+<config>
+    <modules>
+        <Xyz_Test>
+            <version>1.6.0.0.2</version>
+        </Xyz_Test>
+    </modules>
+    <frontend>
+        <routers>
+            <test>
+                <use>standard</use>
+                <args>
+                    <module>Xyz_Test</module>
+                    <frontName>xyz_test</frontName>
+                </args>
+            </test>
+        </routers>
+    </frontend>
+    <global>
+        <models>
+            <test>
+                <class>Xyz_Test_Model</class>
+                <resourceModel>test_resource</resourceModel>
+            </test>
+        </models>
+        <blocks>
+            <test>
+                <class>Xyz_Test_Block</class>
+            </test>
+        </blocks>
+    </global>
+</config>

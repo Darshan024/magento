@@ -1,0 +1,42 @@
+2024-05-08T07:27:49+00:00 DEBUG (7): Job "salesman_rank_crone" (id: ) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-05-08T07:27:49+00:00 DEBUG (7): Start: salesman_rank_crone
+2024-05-08T07:29:22+00:00 DEBUG (7): Job "salesman_rank_crone" (id: ) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-05-08T07:29:22+00:00 DEBUG (7): Start: salesman_rank_crone
+2024-05-08T07:29:34+00:00 DEBUG (7): Job "salesman_rank_crone" (id: ) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-05-08T07:29:35+00:00 DEBUG (7): Start: salesman_rank_crone
+2024-05-08T07:29:35+00:00 DEBUG (7): Stop: salesman_rank_crone
+2024-05-08T08:14:52+00:00 DEBUG (7): Job "salesman_rank_crone" (id: ) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-05-08T08:14:52+00:00 DEBUG (7): Start: salesman_rank_crone
+2024-05-08T08:14:52+00:00 DEBUG (7): Stop: salesman_rank_crone
+2024-05-08T08:18:43+00:00 DEBUG (7): Job "aoescheduler_heartbeat" (id: 28) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-05-08T08:18:43+00:00 DEBUG (7): Start: aoescheduler_heartbeat
+2024-05-08T08:18:43+00:00 DEBUG (7): Stop: aoescheduler_heartbeat
+2024-05-08T08:18:43+00:00 DEBUG (7): Job "newsletter_send_all" (id: 54) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-05-08T08:18:43+00:00 DEBUG (7): Start: newsletter_send_all
+2024-05-08T08:18:43+00:00 DEBUG (7): Stop: newsletter_send_all
+2024-05-08T08:18:43+00:00 DEBUG (7): Job "core_email_queue_send_all" (id: 38) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-05-08T08:18:43+00:00 DEBUG (7): Start: core_email_queue_send_all
+2024-05-08T11:08:58+00:00 DEBUG (7): Job "salesman_rank_crone" (id: ) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-05-08T11:08:58+00:00 DEBUG (7): Start: salesman_rank_crone
+2024-05-08T11:08:58+00:00 DEBUG (7): Stop: salesman_rank_crone
+2024-05-08T11:10:59+00:00 DEBUG (7): Job "salesman_rank_crone" (id: ) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-05-08T11:10:59+00:00 DEBUG (7): Start: salesman_rank_crone
+2024-05-08T11:10:59+00:00 DEBUG (7): Stop: salesman_rank_crone
+2024-06-03T04:52:52+00:00 DEBUG (7): Job "outlook_configuration" (id: ) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-06-03T04:52:52+00:00 DEBUG (7): Start: outlook_configuration
+2024-06-03T04:52:52+00:00 DEBUG (7): Stop: outlook_configuration
+2024-06-03T04:54:07+00:00 DEBUG (7): Job "outlook_configuration" (id: ) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-06-03T04:54:07+00:00 DEBUG (7): Start: outlook_configuration
+2024-06-03T04:54:07+00:00 DEBUG (7): Stop: outlook_configuration
+2024-06-11T11:08:29+00:00 DEBUG (7): Job "filetransfer_configuration" (id: ) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-06-11T11:08:29+00:00 DEBUG (7): Start: filetransfer_configuration
+2024-06-11T11:08:29+00:00 DEBUG (7): Stop: filetransfer_configuration
+2024-06-11T11:08:46+00:00 DEBUG (7): Job "filetransfer_configuration" (id: ) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-06-11T11:08:46+00:00 DEBUG (7): Start: filetransfer_configuration
+2024-06-11T11:08:46+00:00 DEBUG (7): Stop: filetransfer_configuration
+2024-06-11T11:09:41+00:00 DEBUG (7): Job "filetransfer_configuration" (id: ) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-06-11T11:09:41+00:00 DEBUG (7): Start: filetransfer_configuration
+2024-06-11T11:09:41+00:00 DEBUG (7): Stop: filetransfer_configuration
+2024-06-12T04:51:25+00:00 DEBUG (7): Job "filetransfer_configuration" (id: ) is running as hp, but this doesn't match the configuration. You can disable this message by setting the default user in configuration.
+2024-06-12T04:51:25+00:00 DEBUG (7): Start: filetransfer_configuration
+2024-06-12T04:51:25+00:00 DEBUG (7): Stop: filetransfer_configuration

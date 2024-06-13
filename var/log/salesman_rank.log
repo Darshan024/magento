@@ -1,0 +1,30 @@
+2024-05-08T07:27:50+00:00 DEBUG (7): Array
+(
+    [0] => user_id
+    [1] => SUM(commission) AS total_commission
+)
+
+2024-05-08T07:29:22+00:00 DEBUG (7): Array
+(
+    [user_id] => 2
+    [rank] => 3
+)
+
+2024-05-08T07:29:35+00:00 DEBUG (7): Array
+(
+    [user_id] => 2
+    [rank] => 3
+)
+
+2024-05-08T07:29:35+00:00 DEBUG (7): Array
+(
+    [user_id] => 3
+    [rank] => 2
+)
+
+2024-05-08T07:29:35+00:00 DEBUG (7): Array
+(
+    [user_id] => 4
+    [rank] => 1
+)
+

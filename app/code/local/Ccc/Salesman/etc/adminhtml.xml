@@ -1,0 +1,103 @@
+<config>
+    <menu>
+        <salesman translate="title" module="salesman">
+            <title>Salesman</title>
+            <sort_order>70</sort_order>
+            <children>
+                <salesman_percentage translate="add" module="salesman">
+                    <title>Salesman Profile</title>
+                    <action>adminhtml/salesman/index</action>
+                    <sort_order>0</sort_order>
+                </salesman_percentage>
+                <salesman_commission translate="report" module="salesman">
+                    <title>Salesman Commision</title>
+                    <action>adminhtml/ordercommision/index</action>
+                    <sort_order>0</sort_order>
+                </salesman_commission>
+                <rank_report translate="rankreport" module="salesman">
+                    <title>Salesman Rank Report</title>
+                    <action>adminhtml/ordercommision/rankreport</action>
+                    <sort_order>0</sort_order>
+                </rank_report>
+                <salesman_compare>
+                    <title>Salesman Comparison</title>
+                    <action>adminhtml/salesman/compare</action>
+                    <sort_order>0</sort_order>
+                </salesman_compare>
+                <salesman_all>
+                    <title>Salesman All Grid</title>
+                    <action>adminhtml/salesman/all</action>
+                </salesman_all>
+            </children>
+            <action>adminhtml/salesman/index</action>
+        </salesman>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <salesman translate="title" module="salesman">
+                                        <title>Salesman Percentage</title>
+                                        <sort_order>50</sort_order>
+                                    </salesman>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                    <salesman translate='title' module='salesman'>
+                        <title>Salesman</title>
+                        <children>
+                            <salesman_percentage translate="title" module="salesman">
+                                <title>Salesmnan Percentage</title>
+                                <sort_order>70</sort_order>
+                                <children>
+                                    <index translate="title">
+                                        <title>Show Grid</title>
+                                        <sort_order>10</sort_order>
+                                    </index>
+                                    <new translate="title">
+                                        <title>Can Add</title>
+                                        <sort_order>10</sort_order>
+                                    </new>
+                                    <edit translate="title">
+                                        <title>Can Edit</title>
+                                        <sort_order>10</sort_order>
+                                    </edit>
+                                    <delete translate="title">
+                                        <title>Can Delete</title>
+                                        <sort_order>10</sort_order>
+                                    </delete>
+                                </children>
+                            </salesman_percentage>
+                            <salesman_commission>
+                                <title>Salesmnan Commission</title>
+                                <sort_order>70</sort_order>
+                                <children>
+                                    <index translate="title">
+                                        <title>Show Grid</title>
+                                        <sort_order>10</sort_order>
+                                    </index>
+                                    <select_salesman translate="title">
+                                        <title>Select Salesman</title>
+                                        <sort_order>10</sort_order>
+                                    </select_salesman>
+                                    <columns translate="title">
+                                        <title>Columns</title>
+                                        <children>
+                                            <total_upsold translate="title"><title>Total Upsold</title></total_upsold>
+                                            <commission translate="title"><title>Commission</title></commission>
+                                        </children>
+                                    </columns>
+                                </children>
+                            </salesman_commission>
+                        </children>
+                    </salesman>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

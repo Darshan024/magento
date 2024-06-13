@@ -1,0 +1,78 @@
+<config>
+    <modules>
+        <Ccc_Test>
+            <version>1.6.0.0.1</version>
+        </Ccc_Test>
+    </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <test>
+                    <file>test.xml</file>
+                </test>
+            </updates>
+        </layout>
+    </frontend>
+    <adminhtml>
+        <layout>
+            <updates>
+                <test>
+                    <file>test.xml</file>
+                </test>
+            </updates>
+        </layout>
+    </adminhtml>
+    <global>
+        <models>
+            <catalog>
+                <rewrite>
+                    <product>Ccc_Test_Model_Product</product><!--It
+                    is for overriding the Model class-->
+                </rewrite>
+            </catalog>
+            <ccc_test>
+                <class>Ccc_Test_Model</class>
+                <resourceModel>test_resource</resourceModel>
+            </ccc_test>
+        </models>
+        <blocks>
+            <catalog>
+                <rewrite>
+                    <product>Ccc_Test_Block_Product</product><!--It
+                    is for overriding the Block class-->
+                </rewrite>
+            </catalog>
+            <test>
+                <class>Ccc_Test_Block</class>
+            </test>
+        </blocks>
+        <helpers>
+            <test>
+                <class>Ccc_Test_Helper</class>
+            </test>
+        </helpers>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Ccc_Test before="Ccc_Salesman">Ccc_Test_Adminhtml</Ccc_Test>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <frontend>
+        <routers>
+            <catalog>
+                <args>
+                    <modules>
+                        <Ccc_Test before="Catalog_Product">Ccc_Test</Ccc_Test>
+                        <Ccc_Test before="Catalog_Category">Ccc_Test</Ccc_Test>
+                    </modules>
+                </args>
+            </catalog>
+        </routers>
+    </frontend>
+</config>

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_seller_index>
+        <reference name="content">
+            <block type="productseller/adminhtml_seller" name="productseller_seller"></block>
+        </reference>
+    </adminhtml_seller_index>
+    <adminhtml_seller_edit>
+        <reference name="content">
+            <block type="productseller/adminhtml_seller_edit" name="seller_block_edit"></block>
+        </reference>
+    </adminhtml_seller_edit>
+    <adminhtml_report_index>
+        <reference name="head">
+            <action method="addJs">
+                <script>productseller/grid.js</script>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="productseller/adminhtml_report" name="productseller_report"></block>
+        </reference>
+    </adminhtml_report_index>
+</layout>

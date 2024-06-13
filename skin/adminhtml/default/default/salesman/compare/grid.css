@@ -1,0 +1,31 @@
+#popup-container {
+    display: none;
+    position: fixed;
+    top: 20%;
+    left: 35%;
+    width: 20%;
+    height: 70%;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: #ea7601d4;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.popup-content a {
+    color: white;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_salesman_index>
+        <reference name="head">
+            <action method="addJs">
+                <script>salesman/metric/grid.js</script>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="salesman/adminhtml_salesman" name="salesman_salesman"></block>
+        </reference>
+    </adminhtml_salesman_index>
+    <adminhtml_salesman_edit>
+        <update handle="editor" />
+        <reference name="content">
+            <block type="salesman/adminhtml_salesman_edit" name="salesman_block_edit"></block>
+        </reference>
+    </adminhtml_salesman_edit>
+    <adminhtml_ordercommision_index>
+        <reference name="content">
+            <block type="salesman/adminhtml_report" name="salesman_report"
+                template="salesman/commission/container.phtml">
+            </block>
+        </reference>
+        <reference name="head">
+            <action method="addJs">
+                <script>salesman/grid.js</script>
+            </action>
+        </reference>
+    </adminhtml_ordercommision_index>
+    <adminhtml_ordercommision_rankreport>
+        <reference name="head">
+            <action method="addJs">
+                <script>salesman/rankreport/grid.js</script>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="salesman/adminhtml_rankreport" name="salesman_rankreport"
+                template="salesman/rankreport/container.phtml" />
+        </reference>
+    </adminhtml_ordercommision_rankreport>
+    <adminhtml_salesman_compare>
+        <reference name="head">
+            <action method="addJs">
+                <script>salesman/compare/grid2.js</script>
+            </action>
+            <action method="addCss">
+                <name>salesman/compare/grid.css</name>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="salesman/adminhtml_compare" name="salesman_comparison"
+                template="salesman/compare/container.phtml">
+            </block>
+        </reference>
+    </adminhtml_salesman_compare>
+    <adminhtml_salesman_all>
+        <!-- <update handle="adminhtml_ordercommision_index"/> -->
+        <!-- <update handle="adminhtml_dashboard_index" /> -->
+    </adminhtml_salesman_all>
+</layout>

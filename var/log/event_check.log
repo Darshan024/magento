@@ -1,0 +1,104 @@
+2024-06-05T05:22:44+00:00 DEBUG (7): Array
+(
+    [from] => darshansuthar24@outlook.com
+    [to] => test_harsh@outlook.com
+    [subject] => Test 4
+    [received_datetime] => 2024-06-04T04:41:55Z
+    [has_attechments] => 
+    [body] => Outlook 4
+    [outlook_id] => AQMkADAwATM0MDAAMS03Mzk1LWU0OTkALTAwAi0wMAoARgAAA8lBqEXnLiFCljCUaZh6G24HACIe7MS-ax5Fottdgo8nJhsAAAIBCQAAACIe7MS-ax5Fottdgo8nJhsAAAAC6erBAAAA
+    [config_id] => 1
+    [email_id] => 387
+)
+
+2024-06-05T05:22:44+00:00 DEBUG (7): Array
+(
+    [from] => darshansuthar24@outlook.com
+    [to] => test_harsh@outlook.com
+    [subject] => Test 3
+    [received_datetime] => 2024-06-03T11:56:24Z
+    [has_attechments] => 
+    [body] => Outlook 3
+    [outlook_id] => AQMkADAwATM0MDAAMS03Mzk1LWU0OTkALTAwAi0wMAoARgAAA8lBqEXnLiFCljCUaZh6G24HACIe7MS-ax5Fottdgo8nJhsAAAIBCQAAACIe7MS-ax5Fottdgo8nJhsAAALMDwAAAA==
+    [config_id] => 1
+    [email_id] => 388
+)
+
+2024-06-05T05:22:44+00:00 DEBUG (7): Array
+(
+    [from] => darshansuthar24@outlook.com
+    [to] => test_harsh@outlook.com
+    [subject] => Test 2
+    [received_datetime] => 2024-06-03T09:36:35Z
+    [has_attechments] => 
+    [body] => Testing Last Read Time
+    [outlook_id] => AQMkADAwATM0MDAAMS03Mzk1LWU0OTkALTAwAi0wMAoARgAAA8lBqEXnLiFCljCUaZh6G24HACIe7MS-ax5Fottdgo8nJhsAAAIBCQAAACIe7MS-ax5Fottdgo8nJhsAAALMDgAAAA==
+    [config_id] => 1
+    [email_id] => 389
+)
+
+2024-06-05T05:22:46+00:00 DEBUG (7): Array
+(
+    [from] => darshansuthar24@outlook.com
+    [to] => test_harsh@outlook.com
+    [subject] => Outlook
+    [received_datetime] => 2024-06-03T05:34:31Z
+    [has_attechments] => 1
+    [body] => Test for outlook
+    [outlook_id] => AQMkADAwATM0MDAAMS03Mzk1LWU0OTkALTAwAi0wMAoARgAAA8lBqEXnLiFCljCUaZh6G24HACIe7MS-ax5Fottdgo8nJhsAAAIBCQAAACIe7MS-ax5Fottdgo8nJhsAAALMDQAAAA==
+    [config_id] => 1
+    [email_id] => 390
+)
+
+2024-06-05T05:22:46+00:00 DEBUG (7): Array
+(
+    [from] => darshansuthar24@outlook.com
+    [to] => test_harsh@outlook.com
+    [subject] => Test
+    [received_datetime] => 2024-05-30T10:35:22Z
+    [has_attechments] => 
+    [body] => Hello
+    [outlook_id] => AQMkADAwATM0MDAAMS03Mzk1LWU0OTkALTAwAi0wMAoARgAAA8lBqEXnLiFCljCUaZh6G24HACIe7MS-ax5Fottdgo8nJhsAAAIBCQAAACIe7MS-ax5Fottdgo8nJhsAAALMDAAAAA==
+    [config_id] => 1
+    [email_id] => 394
+)
+
+2024-06-05T05:41:32+00:00 DEBUG (7): Array
+(
+    [from] => darshansuthar24@outlook.com
+    [to] => test_harsh@outlook.com
+    [subject] => Test 2
+    [received_datetime] => 2024-06-03T09:36:35Z
+    [has_attechments] => 
+    [body] => Testing Last Read Time
+    [outlook_id] => AQMkADAwATM0MDAAMS03Mzk1LWU0OTkALTAwAi0wMAoARgAAA8lBqEXnLiFCljCUaZh6G24HACIe7MS-ax5Fottdgo8nJhsAAAIBCQAAACIe7MS-ax5Fottdgo8nJhsAAALMDgAAAA==
+    [config_id] => 1
+    [email_id] => 396
+)
+
+2024-06-05T05:41:32+00:00 DEBUG (7): Array
+(
+    [from] => darshansuthar24@outlook.com
+    [to] => test_harsh@outlook.com
+    [subject] => Test 3
+    [received_datetime] => 2024-06-03T11:56:24Z
+    [has_attechments] => 
+    [body] => Outlook 3
+    [outlook_id] => AQMkADAwATM0MDAAMS03Mzk1LWU0OTkALTAwAi0wMAoARgAAA8lBqEXnLiFCljCUaZh6G24HACIe7MS-ax5Fottdgo8nJhsAAAIBCQAAACIe7MS-ax5Fottdgo8nJhsAAALMDwAAAA==
+    [config_id] => 1
+    [email_id] => 397
+)
+
+2024-06-05T05:41:32+00:00 DEBUG (7): Array
+(
+    [from] => darshansuthar24@outlook.com
+    [to] => test_harsh@outlook.com
+    [subject] => Test 4
+    [received_datetime] => 2024-06-04T04:41:55Z
+    [has_attechments] => 
+    [body] => Outlook 4
+    [outlook_id] => AQMkADAwATM0MDAAMS03Mzk1LWU0OTkALTAwAi0wMAoARgAAA8lBqEXnLiFCljCUaZh6G24HACIe7MS-ax5Fottdgo8nJhsAAAIBCQAAACIe7MS-ax5Fottdgo8nJhsAAAAC6erBAAAA
+    [config_id] => 1
+    [email_id] => 398
+)
+

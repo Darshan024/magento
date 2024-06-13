@@ -1,0 +1,687 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright   Copyright (c) 2006-2018 Magento, Inc. (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+<?php
+/**
+ * Template for Mage_Adminhtml_Block_Widget_Grid
+ *
+ *  getId()
+ *  getCollection()
+ *  getColumns()
+ *  getPagerVisibility()
+ *  getVarNamePage()
+ */
+$numColumns = sizeof($this->getColumns());
+?>
+<?php if ($this->getCollection()): ?>
+    <?php if ($this->canDisplayContainer()): ?>
+        <?php if ($this->getGridHeader()): ?>
+            <div class="content-header">
+                <table cellspacing="0">
+                    <tr>
+                        <td style="width:50%;">
+                            <h2><?php echo $this->getGridHeader(); ?></h2>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        <?php endif ?>
+
+        <div id="<?php echo $this->getId() ?>">
+        <?php else: ?>
+            <?php echo $this->getMessagesBlock()->toHtml() ?>
+        <?php endif; ?>
+
+        <?php if ($this->getPagerVisibility() || $this->getExportTypes() || $this->getFilterVisibility()): ?>
+            <table cellspacing="0" class="actions">
+                <tr>
+                    <?php if ($this->getPagerVisibility()): ?>
+                        <td class="pager">
+                            <?php echo $this->__('Page') ?>
+
+                            <?php $_curPage = $this->getCollection()->getCurPage() ?>
+                            <?php $_lastPage = $this->getCollection()->getLastPageNumber() ?>
+                            <?php if ($_curPage > 1): ?>
+                                <a href="#" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Previous page')) ?>"
+                                    onclick="<?php echo $this->getJsObjectName() ?>.setPage('<?php echo ($_curPage - 1) ?>');return false;"><img
+                                        src="<?php echo $this->getSkinUrl('images/pager_arrow_left.gif') ?>"
+                                        alt="<?php echo Mage::helper('core')->quoteEscape($this->__('Go to Previous page')) ?>"
+                                        class="arrow" /></a>
+                            <?php else: ?>
+                                <img src="<?php echo $this->getSkinUrl('images/pager_arrow_left_off.gif') ?>"
+                                    alt="<?php echo Mage::helper('core')->quoteEscape($this->__('Go to Previous page')) ?>"
+                                    class="arrow" />
+                            <?php endif; ?>
+
+                            <input type="text" name="<?php echo $this->getVarNamePage() ?>" value="<?php echo $_curPage ?>"
+                                class="input-text page"
+                                onkeypress="<?php echo $this->getJsObjectName() ?>.inputPage(event, '<?php echo $_lastPage ?>')" />
+
+                            <?php if ($_curPage < $_lastPage): ?>
+                                <a href="#" title="<?php echo Mage::helper('core')->quoteEscape($this->__('Next page')) ?>"
+                                    onclick="<?php echo $this->getJsObjectName() ?>.setPage('<?php echo ($_curPage + 1) ?>');return false;"><img
+                                        src="<?php echo $this->getSkinUrl('images/pager_arrow_right.gif') ?>"
+                                        alt="<?php echo Mage::helper('core')->quoteEscape($this->__('Go to Next page')) ?>"
+                                        class="arrow" /></a>
+                            <?php else: ?>
+                                <img src="<?php echo $this->getSkinUrl('images/pager_arrow_right_off.gif') ?>"
+                                    alt="<?php echo Mage::helper('core')->quoteEscape($this->__('Go to Next page')) ?>" class="arrow" />
+                            <?php endif; ?>
+
+                            <?php echo $this->__('of %s pages', $this->getCollection()->getLastPageNumber()) ?>
+                            <span class="separator">|</span>
+                            <?php echo $this->__('View') ?>
+                            <select name="<?php echo $this->getVarNameLimit() ?>"
+                                onchange="<?php echo $this->getJsObjectName() ?>.loadByElement(this)">
+                                <option value="20" <?php if ($this->getCollection()->getPageSize() == 20): ?> selected="selected"
+                                    <?php endif; ?>>20</option>
+                                <option value="30" <?php if ($this->getCollection()->getPageSize() == 30): ?> selected="selected"
+                                    <?php endif; ?>>30</option>
+                                <option value="50" <?php if ($this->getCollection()->getPageSize() == 50): ?> selected="selected"
+                                    <?php endif; ?>>50</option>
+                                <option value="100" <?php if ($this->getCollection()->getPageSize() == 100): ?> selected="selected"
+                                    <?php endif; ?>>100</option>
+                                <option value="200" <?php if ($this->getCollection()->getPageSize() == 200): ?> selected="selected"
+                                    <?php endif; ?>>200</option>
+                            </select>
+                            <?php echo $this->__('per page') ?><span class="separator">|</span>
+                            <?php echo $this->__('Total %d records found') ?>
+                            <span id="<?php echo $this->getHtmlId() ?>-total-count"
+                                class="no-display"><?php echo $this->getCollection()->getSize() ?></span>
+                            <?php if ($this->getRssLists()): ?>
+                                <?php foreach ($this->getRssLists() as $_rss): ?>
+                                    <span class="separator">|</span><a href="<?php echo $_rss->getUrl() ?>"
+                                        class="link-feed"><?php echo $_rss->getLabel() ?></a>
+                                <?php endforeach ?>
+                            <?php endif; ?>
+                        </td>
+                    <?php endif ?>
+                    <?php if ($this->getExportTypes()): ?>
+                        <td class="export a-right">
+                            <img src="<?php echo $this->getSkinUrl('images/icon_export.gif') ?>" alt="" class="v-middle" />&nbsp;
+                            <?php echo $this->__('Export to:') ?>
+                            <select name="<?php echo $this->getId() ?>_export" id="<?php echo $this->getId() ?>_export"
+                                style="width:8em;">
+                                <?php foreach ($this->getExportTypes() as $_type): ?>
+                                    <option value="<?php echo $_type->getUrl() ?>"><?php echo $_type->getLabel() ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                            <?php echo $this->getExportButtonHtml() ?>
+                        </td>
+                    <?php endif; ?>
+                    <td class="filter-actions a-right">
+                        <?php echo $this->getMainButtonsHtml() ?>
+                    </td>
+                </tr>
+            </table>
+        <?php endif; ?>
+        <?php if ($this->getMassactionBlock()->isAvailable()): ?>
+            <?php echo $this->getMassactionBlockHtml() ?>
+        <?php endif ?>
+        <div class="grid">
+            <div class="hor-scroll">
+                <table cellspacing="0" class="data" id="<?php echo $this->getId() ?>_table">
+                    <?php foreach ($this->getColumns() as $_column): ?>
+                        <col <?php echo $_column->getHtmlProperty() ?> />
+                    <?php endforeach; ?>
+                    <?php if ($this->getHeadersVisibility() || $this->getFilterVisibility()): ?>
+                        <thead>
+                            <?php if ($this->getHeadersVisibility()): ?>
+                                <tr class="headings">
+                                    <?php foreach ($this->getColumns() as $_column): ?>
+                                        <th<?php echo $_column->getHeaderHtmlProperty() ?>><span
+                                                class="nobr"><?php echo $_column->getHeaderHtml() ?></span></th>
+                                        <?php endforeach; ?>
+                                </tr>
+                            <?php endif; ?>
+                            <?php if ($this->getFilterVisibility()): ?>
+                                <tr class="filter">
+                                    <?php $i = 0;
+                                    foreach ($this->getColumns() as $_column): ?>
+                                        <th<?php echo $_column->getHeaderHtmlProperty() ?>><?php echo $_column->getFilterHtml() ?></th>
+                                        <?php endforeach; ?>
+                                </tr>
+                            <?php endif ?>
+                        </thead>
+                    <?php endif; ?>
+                    <?php if ($this->getCountTotals()): ?>
+                        <tfoot>
+                            <tr class="totals">
+                                <?php foreach ($this->getColumns() as $_column): ?>
+                                    <th class="<?php echo $_column->getCssProperty() ?>">
+                                        <?php echo ($_column->hasTotalsLabel()) ? $_column->getTotalsLabel() : $_column->getRowField($_column->getGrid()->getTotals()) ?>&nbsp;
+                                    </th>
+                                <?php endforeach; ?>
+                            </tr>
+                        </tfoot>
+                    <?php endif; ?>
+
+                    <tbody>
+                        <?php if (($this->getCollection()->getSize() > 0) && (!$this->getIsCollapsed())): ?>
+                            <?php foreach ($this->getCollection() as $_index => $_item): ?>
+                                <tr title="<?php echo $this->getRowUrl($_item) ?>" <?php if ($_class = $this->getRowClass($_item)): ?>
+                                        class="<?php echo $_class; ?>" <?php endif; ?>>
+                                    <?php $i = 0;
+                                    foreach ($this->getColumns() as $_column): ?>
+
+                                        <?php if ($this->shouldRenderCell($_item, $_column)): ?>
+                                            <?php $_rowspan = $this->getRowspan($_item, $_column); ?>
+                                            <td <?php echo ($_rowspan ? 'rowspan="' . $_rowspan . '" ' : '') ?>class="<?php echo $_column->getCssProperty() ?> <?php echo ++$i == $numColumns ? 'last' : '' ?>">
+                                                <?php echo (($_html = $_column->getRowField($_item)) != '' ? $_html : '&nbsp;') ?>
+                                            </td>
+                                            <?php if ($this->shouldRenderEmptyCell($_item, $_column)): ?>
+                                                <td colspan="<?php echo $this->getEmptyCellColspan($_item) ?>" class="last">
+                                                    <?php echo $this->getEmptyCellLabel() ?>
+                                                </td>
+                                            <?php endif; ?>
+                                        <?php endif; ?>
+
+                                    <?php endforeach; ?>
+                                </tr>
+                                <?php if ($_multipleRows = $this->getMultipleRows($_item)): ?>
+                                    <?php foreach ($_multipleRows as $_i): ?>
+                                        <tr>
+                                            <?php $i = 0;
+                                            foreach ($this->getMultipleRowColumns($_i) as $_column): ?>
+                                                <td
+                                                    class="<?php echo $_column->getCssProperty() ?> <?php echo ++$i == $numColumns - 1 ? 'last' : '' ?>">
+                                                    <?php echo (($_html = $_column->getRowField($_i)) != '' ? $_html : '&nbsp;') ?>
+                                                </td>
+                                            <?php endforeach; ?>
+                                        </tr>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+
+                                <?php if ($this->shouldRenderSubTotal($_item)): ?>
+                                    <tr class="subtotals">
+                                        <?php $i = 0;
+                                        foreach ($this->getSubTotalColumns() as $_column): ?>
+                                            <td
+                                                class="<?php echo $_column->getCssProperty() ?> <?php echo ++$i == $numColumns ? 'last' : '' ?>">
+                                                <?php echo ($_column->hasSubtotalsLabel() ? $_column->getSubtotalsLabel() :
+                                                    $_column->getRowField($this->getSubTotalItem($_item))
+                                                );
+                                                ?>
+                                            </td>
+                                        <?php endforeach; ?>
+                                    </tr>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        <?php elseif ($this->getEmptyText()): ?>
+                            <tr>
+                                <td class="empty-text <?php echo $this->getEmptyTextClass() ?>"
+                                    colspan="<?php echo $numColumns ?>"><?php echo $this->getEmptyText() ?></td>
+                            </tr>
+                        <?php endif; ?>
+                    </tbody>
+
+                </table>
+            </div>
+        </div>
+        <?php if ($this->canDisplayContainer()): ?>
+        </div>
+        <script type="text/javascript">
+            //<![CDATA[
+            <?php echo $this->getJsObjectName() ?> = new varienGrid('<?php echo $this->getId() ?>', '<?php echo $this->getGridUrl() ?>', '<?php echo $this->getVarNamePage() ?>', '<?php echo $this->getVarNameSort() ?>', '<?php echo $this->getVarNameDir() ?>', '<?php echo $this->getVarNameFilter() ?>');
+            <?php echo $this->getJsObjectName() ?>.useAjax = '<?php echo $this->getUseAjax() ?>';
+            <?php if ($this->getRowClickCallback()): ?>
+                <?php echo $this->getJsObjectName() ?>.rowClickCallback = <?php echo $this->getRowClickCallback() ?>;
+            <?php endif; ?>
+            <?php if ($this->getCheckboxCheckCallback()): ?>
+                <?php echo $this->getJsObjectName() ?>.checkboxCheckCallback = <?php echo $this->getCheckboxCheckCallback() ?>;
+            <?php endif; ?>
+            <?php if ($this->getRowInitCallback()): ?>
+                <?php echo $this->getJsObjectName() ?>.initRowCallback = <?php echo $this->getRowInitCallback() ?>;
+                <?php echo $this->getJsObjectName() ?>.initGridRows();
+            <?php endif; ?>
+            <?php if ($this->getMassactionBlock()->isAvailable()): ?>
+                <?php echo $this->getMassactionBlock()->getJavaScript() ?>
+            <?php endif ?>
+            <?php echo $this->getAdditionalJavaScript(); ?>
+            //]]>
+        </script>
+    <?php endif; ?>
+<?php endif ?>
+
+
+
+
+<?php
+$jsonData = json_encode($this->getGridyData());
+$this->testingDa();
+// print_r($data);
+// print_r(get_class_methods($this));
+
+print_r($jsonData);
+?>
+<script>
+    function fetchDataAndUpdateGrid() {
+        var formData = new FormData();
+        // formData.append('checkedCheckboxes', JSON.stringify(checkedCheckboxes));
+        formData.append('form_key', '<?php echo $this->getFormKey() ?>');
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    var newData = (xhr.responseText);
+                    // grid.setRowData(newData);
+                    // console.log(newData);
+                } else {
+                    console.error('Error fetching data:', xhr.status);
+                }
+            }
+        };
+        const url = '<?php echo $this->getUrl('*/*/') ?>';
+        xhr.open('POST', url);
+        xhr.send(formData);
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+        fetchDataAndUpdateGrid();
+    });
+</script>
+
+
+<!-- show grid in this div  -->
+
+<div id="myGrid"></div>
+
+<script>
+    let applyFilterBtn = document.querySelector('#serach_button');
+    console.log(applyFilterBtn);
+    applyFilterBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        // document.addEventListener('DOMContentLoaded', function () {
+        console.log(123);
+        const labelData = {
+            metric: 'Metrics',
+            s1: 'Salesman 1',
+            s2: 'Salesman 2',
+            difference: 'Diffrence Value',
+        };
+
+        const columnDefs = [];
+        //column header and fields
+        Object.keys(labelData).forEach(columnName => {
+            columnDefs.push({
+                headerName: labelData[columnName],
+                field: columnName
+            });
+        });
+
+        //column json data + header data
+        gridOptions = {
+            rowData: <?php echo $jsonData; ?>,
+            columnDefs: columnDefs
+        };
+
+        // console.log($result);
+        console.log(gridOptions)
+        //show grid 
+        const myGridElement = document.querySelector('#myGrid');
+        grid = new MyGrid(myGridElement, gridOptions);
+        grid.renderGrid(0);
+    });
+</script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
+<!-- <script>
+    class MyGrid {
+        constructor(gridElement, gridOptions) {
+            this.injectStyles();
+            this.data = gridOptions.rowData;
+            this.originalData = [...this.data];
+            // console.log(this.originalData);
+            this.columnDefs = gridOptions.columnDefs;
+            this.container = gridElement;
+            this.rowHeight = 30;
+            this.totalRows = this.data.length;
+
+            this.container.style.height = "300px";
+            this.container.style.overflowY = "auto";
+            this.container.style.position = "relative";
+
+            this.tempDiv = document.createElement("div");
+            this.table = document.createElement("table");
+            this.table.style.cssText = "width: 100%; border-collapse: collapse;";
+            this.table.style.height = `${this.rowHeight * this.data.length}px`;
+            this.thead = document.createElement("thead");
+            this.tbody = document.createElement("tbody");
+            this.table.appendChild(this.thead);
+            this.table.appendChild(this.tbody);
+            this.container.appendChild(this.table);
+
+            this.currentSort = { column: null, direction: "" };
+            this.filters = {};
+            this.createHeaders();
+            this.initVirtualScroll();
+            this.addCheckboxListeners();
+        }
+
+        createHeaders() {
+            const filterRow = document.createElement("tr");
+            const headerRow = document.createElement("tr");
+            //index represent the current element index and coldef represent the individual column definition like headerName
+            this.columnDefs.forEach((colDef, index) => {
+                const th = document.createElement("th");
+                th.innerHTML = `${colDef.headerName} <span class='sort-icon'>&#x25B2;</span>`;
+
+                th.style.minWidth = `${colDef.minWidth || 100}px`;
+                th.setAttribute("draggable", true);
+                th.addEventListener("dragstart", this.handleDragStart.bind(this, index));
+                th.addEventListener("dragover", this.handleDragOver.bind(this, index));
+                th.addEventListener("drop", this.handleDrop.bind(this, index));
+                th.addEventListener("click", () => this.handleSort(colDef.field));
+
+                //filter
+                const input = document.createElement("input");
+                input.type = "text";
+                input.placeholder = "Filter...";
+                input.oninput = (event) =>
+                    this.handleFilter(colDef.field, event.target.value);
+                input.style.width = "100%";
+                filterRow.appendChild(document.createElement("th")).appendChild(input);
+                headerRow.appendChild(th);
+            });
+            this.thead.appendChild(headerRow);
+            this.thead.appendChild(filterRow);
+        }
+
+        initVirtualScroll() {
+            this.container.style.height = `${window.innerHeight}px`;
+            this.table.style.overflowY = "scroll";
+            this.table.style.position = "relative";
+            this.buffer = window.innerHeight;
+            this.visibleRows = Math.ceil(this.buffer / this.rowHeight);
+            this.attachEvents();
+            this.renderGrid(0);
+        }
+
+        attachEvents() {
+            let lastKnownScrollPosition = 0;
+            let ticking = false;
+
+            this.container.addEventListener("scroll", () => {
+                lastKnownScrollPosition = this.container.scrollTop;
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        const startIndex = Math.floor(
+                            lastKnownScrollPosition / this.rowHeight
+                        );
+                        if (startIndex + this.visibleRows <= this.totalRows) {
+                            this.renderGrid(startIndex);
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        }
+
+        renderGrid(startIndex) {
+            const endIndex = Math.min(startIndex + this.visibleRows, this.data.length);
+            this.tbody.innerHTML = "";
+
+            for (let i = startIndex; i < endIndex; i++) {
+                const rowElement = this.createRowElement(this.data[i], i);
+                rowElement.style.height = "30px";
+                this.tbody.appendChild(rowElement);
+            }
+        }
+
+        createRowElement(rowData, index) {
+            const tr = document.createElement("tr");
+            tr.id = `row-${index}`;
+
+            this.columnDefs.forEach((colDef) => {
+                if (colDef.visible !== false) {
+                    const td = document.createElement("td");
+                    td.style.height = `${this.rowHeight}px`;
+                    td.textContent = rowData[colDef.field];
+                    tr.appendChild(td);
+                }
+            });
+            return tr;
+        }
+
+        handleDragStart(originalIndex, event) {
+            event.dataTransfer.setData("text/plain", originalIndex);
+        }
+
+        handleDragOver(targetIndex, event) {
+            event.preventDefault();
+        }
+
+        handleDrop(targetIndex, event) {
+            event.preventDefault();
+            const originalIndex = parseInt(
+                event.dataTransfer.getData("text/plain"),
+                10
+            );
+            if (originalIndex === targetIndex) return;
+
+            const movedColumn = this.columnDefs.splice(originalIndex, 1)[0];
+            this.columnDefs.splice(targetIndex, 0, movedColumn);
+
+            this.thead.innerHTML = "";
+            this.createHeaders();
+            this.renderGrid(0);
+            this.addCheckboxListeners();
+        }
+
+        handleSort(field) {
+            const direction =
+                this.currentSort.column === field && this.currentSort.direction === "asc"
+                    ? "desc"
+                    : "asc";
+            this.originalData.sort((a, b) => {
+                if (a[field] < b[field]) return direction === "asc" ? -1 : 1;
+                if (a[field] > b[field]) return direction === "asc" ? 1 : -1;
+                return 0;
+            });
+            this.currentSort = { column: field, direction };
+            this.applyFilters();
+            this.updateSortIndicator();
+        }
+
+        updateSortIndicator() {
+            Array.from(this.thead.querySelectorAll(".sort-icon")).forEach((icon) => {
+                icon.innerHTML = "&#x25B2;"; // Use &#x25B2; or any other preferred icon for unsorted state
+            });
+            const index = this.columnDefs.findIndex(
+                (colDef) => colDef.field === this.currentSort.column
+            );
+            if (index !== -1) {
+                const header = this.thead.children[0].children[index];
+                if (header) {
+                    const icon = header.querySelector(".sort-icon");
+                    if (icon) {
+                        icon.innerHTML =
+                            this.currentSort.direction === "asc" ? "&#x25BC;" : "&#x25B2;"; // Use &#x25B2; for ascending and &#x25BC; for descending
+                    }
+                }
+            }
+        }
+
+        handleFilter(field, value) {
+            this.filters[field] = value.toLowerCase();
+            this.applyFilters();
+        }
+
+        applyFilters() {
+            this.data = this.originalData.filter((item) => {
+                return Object.keys(this.filters).every((field) => {
+                    if (item[field] == null) return this.filters[field] === "";
+                    return (
+                        this.filters[field] === "" ||
+                        item[field].toString().toLowerCase().includes(this.filters[field])
+                    );
+                });
+            });
+            this.renderGrid(0);
+        }
+
+        addCheckboxListeners() {
+            const checkboxes = document.querySelectorAll(
+                'input[type="checkbox"][data-column]'
+            );
+            checkboxes.forEach((checkbox) => {
+                const column = checkbox.getAttribute("data-column");
+                const isChecked = checkbox.checked;
+                this.setColumnVisibility(column, isChecked);
+                checkbox.addEventListener("change", (event) => {
+                    const isChecked = event.target.checked;
+                    this.setColumnVisibility(column, isChecked);
+                });
+            });
+        }
+
+        setColumnVisibility(columnName, isVisible) {
+            const columnIndex = this.columnDefs.findIndex(
+                (colDef) => colDef.field === columnName
+            );
+            if (columnIndex === -1) return;
+
+            this.columnDefs[columnIndex].visible = isVisible;
+
+            const selector = `th:nth-child(${columnIndex + 1}), td:nth-child(${columnIndex + 1
+                })`;
+            const cells = this.table.querySelectorAll(selector);
+
+            cells.forEach((cell) => {
+                cell.style.display = isVisible ? "" : "none";
+            });
+
+            this.renderGrid(0);
+        }
+
+        injectStyles() {
+            const style = document.createElement("style");
+            style.type = "text/css";
+            style.innerHTML = `
+        table {
+          width: 100%;
+          border-collapse: collapse;
+        }
+        th, td {
+          border: 1px solid #ddd;
+          padding: 8px;
+          text-align: left;
+        }
+        th {
+          background-color: #f2f2f2;
+          cursor: grab;
+        }
+        thead{
+          position: sticky;
+          top: 0;
+          background-color: #f2f2f2;
+          z-index: 1;
+        }
+        th:active {
+          cursor: grabbing;
+        }
+        / Hide the sort icon by default /
+        th .sort-icon {
+          visibility: hidden;
+          margin-left: 5px;  / Adjust spacing as needed /
+        }
+
+        / Show the sort icon when the header is hovered /
+        th:hover .sort-icon {
+          visibility: visible;
+        }
+        input[type="text"] {
+          box-sizing: border-box;
+          padding: 4px;
+          margin: 2px 0;
+          border: 1px solid #ccc;
+        }
+      `;
+            document.head.appendChild(style);
+        }
+
+        getRowData() {
+            return this.data;
+        }
+        setRowData(newData) {
+            this.data = newData;
+            this.originalData = [...this.data];
+            this.renderGrid(0);
+        }
+    }
+</script> -->
+
+<script>
+    var MyGrid = Class.create({
+        initialize: function (container, gridOptions) {
+            this.container = container;
+            this.data = gridOptions.rowData;
+            this.columnDefs = gridOptions.columnDefs;
+            this.createTable();
+            // console.log(gridOptions.rowData);
+        },
+        createTable: function () {
+            this.table = new Element('table', { 'class': 'my-grid-table' });
+            this.container.appendChild(this.table);
+
+            // Create table header
+            var thead = new Element('thead');
+            var headerRow = new Element('tr');
+            this.columnDefs.each(function (colDef) {
+                var th = new Element('th', { 'class': 'header-cell' }).update(colDef.headerName);
+                headerRow.appendChild(th);
+            });
+            thead.appendChild(headerRow);
+            this.table.appendChild(thead);
+
+            // Create table body
+            var tbody = new Element('tbody');
+            this.data.each(function (rowData) {
+                console.log(rowData);
+                var row = new Element('tr');
+                this.columnDefs.each(function (colDef) {
+                    var td = new Element('td').update(rowData[colDef.field]);
+                    row.appendChild(td);
+                });
+                tbody.appendChild(row);
+                console.log(tbody);
+            }.bind(this));
+            this.table.appendChild(tbody);
+            this.table.setStyle({ borderCollapse: 'collapse' });
+            this.table.select('td, th').invoke('setStyle', { border: '1px solid red', padding: '8px', textAlign: 'left' });
+        },
+        renderGrid: function (startIndex) {
+            var endIndex = Math.min(startIndex + this.visibleRows, this.data.length);
+            this.tbody.innerHTML = "";
+
+            for (let i = startIndex; i < endIndex; i++) {
+                const rowElement = this.createRowElement(this.data[i], i);
+                rowElement.style.height = "30px";
+                this.tbody.appendChild(rowElement);
+            }
+        }
+
+    });
+</script>
