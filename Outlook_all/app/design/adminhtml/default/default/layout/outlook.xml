@@ -1,0 +1,24 @@
+<layout>
+    <adminhtml_configuration_index>
+        <reference name="content">
+            <block type="outlook/adminhtml_configuration" name="outlook_configuration"></block>
+        </reference>
+    </adminhtml_configuration_index>
+    <adminhtml_configuration_edit>
+        <reference name="content">
+            <block type="outlook/adminhtml_configuration_edit" name="outlook_configuration_edit"></block>
+        </reference>
+        <reference name="left">
+            <block type="outlook/adminhtml_configuration_edit_tabs"
+                name="outlook_configuration_edit_tabs"></block>
+        </reference>
+        <reference name="head">
+            <action method="addJs">
+                <script>outlook/configuration/grid2.js</script>
+            </action>
+            <action method="addCss">
+                <name>outlook/configuration/grid.css</name>
+            </action>
+        </reference>
+    </adminhtml_configuration_edit>
+</layout>
