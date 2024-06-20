@@ -24,11 +24,11 @@ class Ccc_Filetransfer_Adminhtml_FileController extends Mage_Adminhtml_Controlle
     public function exportAction()
     {
         $filename = str_replace('_', '\\', $this->getRequest()->getParam('filename'));
-        
+
         $filePath = Mage::getBaseDir('var') . DS . 'filetransfer' . DS . 'extracted' . DS . $filename;
 
         $xml = simplexml_load_file($filePath);
-        
+
         $data = [];
         $xmlRows = Mage::helper('filetransfer')->getArray();
 
@@ -42,34 +42,32 @@ class Ccc_Filetransfer_Adminhtml_FileController extends Mage_Adminhtml_Controlle
                 if ($key == 'part_number') {
                     $identifiers = [];
                     foreach ($element->xpath('.//itemIdentifier') as $identifier) {
-                            $identifiers[] = (string) $identifier[$attribute];
+                        $identifiers = (string) $identifier[$attribute];
                     }
-                    $data[$key][] = implode(', ', $identifiers);
-                } elseif($key=="depth" || $key=="length" || $key=="height" || $key=="weight") {
+                    $data[$key][] =$identifiers;
+                } elseif ($key == "depth" || $key == "length" || $key == "height" || $key == "weight") {
                     $dimesnsions = [];
                     foreach ($element->xpath(".//itemCharacteristics/itemDimensions/$key") as $dimesnsion) {
-                            $dimesnsions[] = (string) $dimesnsion[$attribute];
+                        $dimesnsions = (string) $dimesnsion[$attribute];
                     }
-                    $data[$key][] = implode(', ', $dimesnsions);
+                    $data[$key][] = $dimesnsions;
                 }
             }
         }
-        $csvFilePath = Mage::getBaseDir('var') . DS . 'filetransfer' . DS . 'extracted' . DS . pathinfo($filename, PATHINFO_FILENAME) . '.csv';
-        $maxRows =array_map('count', $data);
+        $maxRows = array_map('count', $data);
         $csvData = [];
         for ($i = 0; $i < max($maxRows); $i++) {
             $row = [];
             foreach (array_keys($data) as $key) {
-                $row[] = $data[$key][$i];
+                $row[$key] = $data[$key][$i];
             }
             $csvData[] = $row;
         }
-
-
-        $csv = new Varien_File_Csv();
-        array_unshift($csvData, array_keys($data));
-        $csv->saveData($csvFilePath, $csvData);
-        $this->_redirect('*/*/index');
+        $partModel = Mage::getModel('filetransfer/part');
+        foreach($csvData as $data){
+            $partModel->setData($data)->save();
+        }
+        // $this->_redirect('*/*/index');
     }
 }
 ?>

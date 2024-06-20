@@ -1,12 +1,12 @@
 <layout>
     <adminhtml_filetransfer_index>
         <reference name="content">
-            <block type="filetransfer/adminhtml_configuration" name="filetransfer_configuration" />
+            <block type="filetransfer/adminhtml_configuration" name="filetransfer.configuration" />
         </reference>
     </adminhtml_filetransfer_index>
     <adminhtml_filetransfer_edit>
         <reference name="content">
-            <block type="filetransfer/adminhtml_configuration_edit" name="configuration_edit"/>
+            <block type="filetransfer/adminhtml_configuration_edit" name="configuration.edit"/>
         </reference>
     </adminhtml_filetransfer_edit>
     <adminhtml_file_index>
@@ -14,4 +14,9 @@
             <block type="filetransfer/adminhtml_file" name="file"/>
         </reference>
     </adminhtml_file_index>
+    <adminhtml_part_index>
+        <reference name="content">
+            <block type="filetransfer/adminhtml_part" name="part"/>
+        </reference>
+    </adminhtml_part_index>
 </layout>

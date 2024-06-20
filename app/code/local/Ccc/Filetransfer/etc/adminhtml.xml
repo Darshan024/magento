@@ -14,6 +14,10 @@
                     <action>adminhtml/file</action>
                     <sort_order>0</sort_order>
                 </file>
+                <part>
+                    <title>Manage Parts</title>
+                    <action>adminhtml/part</action>
+                </part>
             </children>
         </filetransfer>
     </menu>

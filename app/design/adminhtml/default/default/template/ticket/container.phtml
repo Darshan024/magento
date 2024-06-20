@@ -1,0 +1,127 @@
+<?php
+$ticketsData = $this->getTicketCollection();
+$totalPage = $this->getTotalPage();
+$currentPage = $this->getCurrentPage();
+$userCollection = $this->getUserCollection();
+$filterCollection = $this->getFilterCollection();
+if ($totalPage) {
+    for ($i = 1; $i <= $totalPage; $i++) { ?>
+        <a href="<?php echo $this->getUrl('*/*/*', array('p' => $i,'_current' => true)); ?>"><button><?php echo $i ?></button></a>
+    <?php }
+}
+?>
+<button onclick="addFilter()">Add Filter</button>
+
+<label>Select Filter</label>
+<?php
+if ($filterCollection) {
+    foreach($filterCollection as $filter){ ?>
+        <a href="<?php echo $this->getUrl('*/*/*', array('filter_id' => $filter->getId(),'_current' => true)); ?>"><button><?php echo $filter->getFilterName(); ?></button></a>
+   <?php }
+}
+?>
+<div id="addFilter_form">
+    <form id="addFilter" action="<?php echo $this->getUrl('*/*/savefilter', array('p' => $currentPage)); ?>" method="post">
+        <?php echo $this->getBlockHtml('formkey') ?>
+        <label for="status">Status</label>
+        <select name="status[]" multiple>
+            <?php foreach ($this->getStatusArray() as $status) { ?>
+                <option value="<?php echo $status->getStatusCode() ?>"><?php echo $status->getStatusLabel() ?></option>
+            <?php } ?>
+        </select><br><br>
+        <label for="assign_to">Assign To</label>
+        <select name="assign_to[]" multiple>
+            <?php foreach ($userCollection as $user) { ?>
+                <option value="<?php echo $user->getUserId() ?>"><?php echo $user->getUsername() ?></option>
+            <?php } ?>
+        </select><br><br>
+        <label>Created At</label>
+        <input type="number" name="created_at"><br><br>
+        <label for="last_comment">Last Comment</label>
+        <select name="last_comment">
+            <?php foreach ($userCollection as $user) { ?>
+                <option value="<?php echo $user->getUserId() ?>"><?php echo $user->getUsername() ?></option>
+            <?php } ?>
+        </select><br><br>
+        <label>Add Filter Name</label>
+        <input type="text" name="filter_name"><br><br>
+        <button type="submit">Submit</button>
+        <button type="button" onclick="closePopupFilter()">Close</button>
+    </form>
+</div>
+
+
+
+<table>
+    <tr>
+        <th>Ticket Id</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Assign By</th>
+        <th>Assign To</th>
+        <th>Priority</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+    <tr class="filter-row">
+        <td></td>
+        <td>
+            <input type="text" name="titleFilter" id="titleFilter">
+        </td>
+        <td>
+            <input type="text" name="descriptionFilter" id="descriptionFilter">
+        </td>
+        <td>
+            <select id="assignByFilter">
+                <option value="">All</option>
+                <?php foreach ($this->getUserCollection() as $assignBy) { ?>
+                    <option value="<?php echo $assignBy->getUsername(); ?>"><?php echo $assignBy->getUsername(); ?></option>
+                <?php } ?>
+            </select>
+        </td>
+        <td>
+            <select id="assignToFilter">
+                <option value="">All</option>
+                <?php foreach ($this->getUserCollection() as $assignTo) { ?>
+                    <option value="<?php echo $assignTo->getUsername(); ?>"><?php echo $assignTo->getUsername(); ?></option>
+                <?php } ?>
+            </select>
+        </td>
+        <td>
+            <input type="number" name="priorityFilter" id="priorityFilter">
+        </td>
+        <td>
+            <select id="statusFilter">
+                <option value="">All</option>
+                <?php foreach ($this->getStatusArray() as $status) { ?>
+                    <option value="<?php echo $status->getStatusLabel() ?>"><?php echo $status->getStatusLabel(); ?>
+                    </option>
+                <?php } ?>
+            </select>
+        </td>
+        <td>
+            <button onclick="filter()">Search</button>
+        </td>
+    </tr>
+    <?php foreach ($ticketsData as $ticket) { ?>
+        <?php
+        $statusData = $this->getStatusData($ticket->getStatus());
+        $statusColor = $statusData->getColourCode();
+        ?>
+        <tr class="ticket-row">
+            <td><?php echo $ticket->getId(); ?></td>
+            <td class="title"><?php echo $ticket->getTitle(); ?></td>
+            <td class="description"><?php echo $ticket->getDescription(); ?></td>
+            <td class="assign-by"><?php echo $this->getUser($ticket->getAssignBy())->getUsername(); ?></td>
+            <td class="assign-to"><?php echo $this->getUser($ticket->getAssignTo())->getUsername(); ?></td>
+            <td class="priority"><?php echo $ticket->getPriority(); ?></td>
+            <td class="status" style="background-color: <?php echo $statusColor; ?>;">
+                <?php echo $statusData->getStatusLabel(); ?>
+            </td>
+            <td>
+                <a
+                    href="<?php echo $this->getUrl('*/*/view', array('ticket_id' => $ticket->getId())) ?>"><button>View</button></a>
+            </td>
+        </tr>
+    <?php } ?>
+</table>

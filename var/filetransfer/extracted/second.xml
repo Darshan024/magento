@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<itemAlign:itemAlignment
+    xmlns:itemAlign="http://xml.ashleyfurniture.com/xml/schemas/afItemAlign_v1.2"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:afParty="http://xml.ashleyfurniture.com/xml/schemas/afParty_v1.5"
+    xmlns:afItem="http://xml.ashleyfurniture.com/xml/schemas/afItem_v1.7"
+    xmlns:afBase="http://xml.ashleyfurniture.com/xml/schemas/afBase_v1.9"
+    xsi:schemaLocation="http://xml.ashleyfurniture.com/xml/schemas/afItemAlign_v1.2 http://xml.ashleyfurniture.com/xml/schemas/af_ItemAlign_v1.2.xsd">
+    <document id="0" status="Original" type="888" language="EN">
+        <creationDate>2024-05-19</creationDate>
+        <creationTime>16:18:02</creationTime>
+    </document>
+    <buyer>
+        <afParty:partyIdentifier partyIdentifierCode="3061700"
+            partyIdentifierQualifierCode="SenderAssigned" />
+    </buyer>
+    <seller>
+        <sellerIdentification>
+            <afParty:partyIdentifier partyIdentifierCode="052738531"
+                partyIdentifierQualifierCode="DUNS" />
+        </sellerIdentification>
+    </seller>
+    <shipTo>
+        <afParty:partyIdentifier partyIdentifierCode="11"
+            partyIdentifierQualifierCode="SenderAssigned" />
+    </shipTo>
+    <items>
+        <item itemType="9" itemClass="ZNBM" retailSalesCategory="MB" itemGroupCode="B672"
+            itemStatus="Discontinued" itemIsAvailable="false" itemIsPackage="false"
+            harmonizationCode="9403910080" itemIsExpressShipEligible="false"
+            itemStatusDate="2022-07-25" itemMfgWarrantyDays="365" itemColor="White" itemsPerCase="1">
+            <itemIdentification>
+                <itemIdentifier itemNumber="B672-58" itemNumberQualifier="SellerAssigned" />
+                <itemIdentifier itemNumber="B672-58" itemNumberQualifier="BuyerAssigned" />
+                <itemIdentifier itemNumber="024052078374" itemNumberQualifier="UPC" />
+                <itemDescription descriptionValue="King/Cal King Panel Headboard"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Product" />
+                <itemDescription descriptionValue="King/Cal King Panel Headboard"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Friendly" />
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>King/Cal King Panel Headboard</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Inches" value="7" />
+                        <height unitOfMeasure="Inches" value="62.25" />
+                        <length unitOfMeasure="Inches" value="82.06" />
+                        <weight unitOfMeasure="Pounds" value="90.2" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>King/Cal King Panel Headboard</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Millimeters" value="177.8" />
+                        <height unitOfMeasure="Millimeters" value="1581.15" />
+                        <length unitOfMeasure="Millimeters" value="2084.39" />
+                        <weight unitOfMeasure="Kilograms" value="40.914" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>King/Cal King Panel Headboard</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Inches" value="52" />
+                        <height unitOfMeasure="Inches" value="9" />
+                        <length unitOfMeasure="Inches" value="85.5" />
+                        <volume unitOfMeasure="CubicFeet" value="23.5" />
+                        <weight unitOfMeasure="Pounds" value="118.8" weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>King/Cal King Panel Headboard</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Millimeters" value="1320.8" />
+                        <height unitOfMeasure="Millimeters" value="228.6" />
+                        <length unitOfMeasure="Millimeters" value="2171.7" />
+                        <volume unitOfMeasure="CubicMeters" value="0.67" />
+                        <weight unitOfMeasure="Kilograms" value="53.887"
+                            weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+            </itemIdentification>
+            <itemVendor>
+                <afParty:partyIdentifier partyIdentifierCode="052738531"
+                    partyIdentifierQualifierCode="DUNS" />
+                <afParty:partyName>Ashley</afParty:partyName>
+            </itemVendor>
+            <itemPricing PriceQualifierCode="Standard">
+                <unitPrice fobPoint="LEESPORT PA">270.00</unitPrice>
+                <wholesalePriceWithoutFreight>280.03</wholesalePriceWithoutFreight>
+                <netPrice>314.19</netPrice>
+                <freightAmount freightPriceQualifier="StandardFreight">34.16</freightAmount>
+                <discountAmount>14.85</discountAmount>
+                <dfiDiscountAmount>2.12</dfiDiscountAmount>
+            </itemPricing>
+            <image quality="MediumResolution" name="B672-58-56-97_BIG.jpg"
+                url="B672-58-56-97_BIG.jpg" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Assembly_Instr/B672-54,56,57,58,94,96,97_i.pdf"
+                name="B672-54,56,57,58,94,96,97_i.pdf"
+                referenceDocumentQualifier="AssemblyInstructions" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Parts_Drawing/B672-54,56,57,58,94,96,97_RPDF.pdf"
+                name="B672-54,56,57,58,94,96,97_RPDF.pdf" referenceDocumentQualifier="PartsDrawing" />
+            <itemFeatures>
+                <itemFeature id="1">Bed frame sold separately</itemFeature>
+                <itemFeature id="2">Made of veneers, wood and engineered wood</itemFeature>
+                <itemFeature id="3">Assembly required</itemFeature>
+            </itemFeatures>
+            <itemFluffs>
+                <itemFluff id="1">Fresh, crisp and classic. Whether you’re going for shabby chic or cottage quaint, this panel headboard is dressed to impress. Flat-panel design is clean and classic.</itemFluff>
+            </itemFluffs>
+            <itemExtraDimensions>
+                <itemExtraDimension>
+                    <standardDimension>Panel to floor: 15 in</standardDimension>
+                    <metricDimension>Panel to floor: 381 mm</metricDimension>
+                </itemExtraDimension>
+            </itemExtraDimensions>
+        </item>
+        <item itemType="9" itemClass="ZNBM" retailSalesCategory="MB" itemGroupCode="B672"
+            itemStatus="Discontinued" itemIsAvailable="false" itemIsPackage="false"
+            harmonizationCode="9403910080" itemIsExpressShipEligible="false"
+            itemStatusDate="2022-09-09" itemMfgWarrantyDays="365" itemColor="White" itemsPerCase="1">
+            <itemIdentification>
+                <itemIdentifier itemNumber="B672-74" itemNumberQualifier="SellerAssigned" />
+                <itemIdentifier itemNumber="B672-74" itemNumberQualifier="BuyerAssigned" />
+                <itemIdentifier itemNumber="024052106077" itemNumberQualifier="UPC" />
+                <itemDescription descriptionValue="Queen Storage Footboard"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Product" />
+                <itemDescription descriptionValue="Queen Storage Footboard"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Friendly" />
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>Queen Storage Footboard</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Inches" value="3.74" />
+                        <height unitOfMeasure="Inches" value="21.75" />
+                        <length unitOfMeasure="Inches" value="67.75" />
+                        <weight unitOfMeasure="Pounds" value="79.272" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>Queen Storage Footboard</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Millimeters" value="95" />
+                        <height unitOfMeasure="Millimeters" value="552.45" />
+                        <length unitOfMeasure="Millimeters" value="1720.85" />
+                        <weight unitOfMeasure="Kilograms" value="35.957" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>Queen Storage Footboard</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Inches" value="30" />
+                        <height unitOfMeasure="Inches" value="20.75" />
+                        <length unitOfMeasure="Inches" value="71.75" />
+                        <volume unitOfMeasure="CubicFeet" value="25" />
+                        <weight unitOfMeasure="Pounds" value="112.3" weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>Queen Storage Footboard</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Millimeters" value="762" />
+                        <height unitOfMeasure="Millimeters" value="527.05" />
+                        <length unitOfMeasure="Millimeters" value="1822.45" />
+                        <volume unitOfMeasure="CubicMeters" value="0.71" />
+                        <weight unitOfMeasure="Kilograms" value="50.938"
+                            weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+            </itemIdentification>
+            <itemVendor>
+                <afParty:partyIdentifier partyIdentifierCode="052738531"
+                    partyIdentifierQualifierCode="DUNS" />
+                <afParty:partyName>Ashley</afParty:partyName>
+            </itemVendor>
+            <itemPricing PriceQualifierCode="Standard">
+                <unitPrice fobPoint="LEESPORT PA">330.00</unitPrice>
+                <wholesalePriceWithoutFreight>342.26</wholesalePriceWithoutFreight>
+                <netPrice>384.01</netPrice>
+                <freightAmount freightPriceQualifier="StandardFreight">41.75</freightAmount>
+                <discountAmount>18.15</discountAmount>
+                <dfiDiscountAmount>2.59</dfiDiscountAmount>
+            </itemPricing>
+            <image quality="MediumResolution" name="B672-78-76-99_BIG.jpg"
+                url="B672-78-76-99_BIG.jpg" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Assembly_Instr/B672-74,76,77,78,95,98,99_i.pdf"
+                name="B672-74,76,77,78,95,98,99_i.pdf"
+                referenceDocumentQualifier="AssemblyInstructions" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Parts_Drawing/B672-74,76,77,78,95,98,99_RPDF.pdf"
+                name="B672-74,76,77,78,95,98,99_RPDF.pdf" referenceDocumentQualifier="PartsDrawing" />
+            <itemFeatures>
+                <itemFeature id="1">This item is compatible with other items in this series, sold separately.</itemFeature>
+            </itemFeatures>
+            <itemFluffs>
+                <itemFluff id="1">This item does not stand alone. It is compatible with other items in this series, sold separately.</itemFluff>
+            </itemFluffs>
+            <itemExtraDimensions>
+                <itemExtraDimension>
+                    <standardDimension>Drawer interior (2): Width:25.75 in Depth:21.25 in Height:7.25 in </standardDimension>
+                    <metricDimension>Drawer interior (2): Width:654.05 mm Depth:539.75 mm Height:184.15 mm </metricDimension>
+                </itemExtraDimension>
+            </itemExtraDimensions>
+        </item>
+        <item itemType="9" itemClass="ZNBM" retailSalesCategory="MB" itemGroupCode="B672"
+            itemStatus="Discontinued" itemIsAvailable="false" itemIsPackage="false"
+            harmonizationCode="9403910080" itemIsExpressShipEligible="false"
+            itemStatusDate="2022-09-09" itemMfgWarrantyDays="365" itemColor="White" itemsPerCase="1">
+            <itemIdentification>
+                <itemIdentifier itemNumber="B672-76" itemNumberQualifier="SellerAssigned" />
+                <itemIdentifier itemNumber="B672-76" itemNumberQualifier="BuyerAssigned" />
+                <itemIdentifier itemNumber="024052106084" itemNumberQualifier="UPC" />
+                <itemDescription descriptionValue="King/Cal King Storage FTBD"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Product" />
+                <itemDescription descriptionValue="King/Cal King Storage FTBD"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Friendly" />
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>King/Cal King Storage FTBD</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Inches" value="3.88" />
+                        <height unitOfMeasure="Inches" value="21.75" />
+                        <length unitOfMeasure="Inches" value="83.5" />
+                        <weight unitOfMeasure="Pounds" value="90.282" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>King/Cal King Storage FTBD</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Millimeters" value="98.43" />
+                        <height unitOfMeasure="Millimeters" value="552.45" />
+                        <length unitOfMeasure="Millimeters" value="2120.9" />
+                        <weight unitOfMeasure="Kilograms" value="40.951" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>King/Cal King Storage FTBD</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Inches" value="30.38" />
+                        <height unitOfMeasure="Inches" value="20.25" />
+                        <length unitOfMeasure="Inches" value="87.5" />
+                        <volume unitOfMeasure="CubicFeet" value="30.5" />
+                        <weight unitOfMeasure="Pounds" value="127" weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>King/Cal King Storage FTBD</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Millimeters" value="771.53" />
+                        <height unitOfMeasure="Millimeters" value="514.35" />
+                        <length unitOfMeasure="Millimeters" value="2222.5" />
+                        <volume unitOfMeasure="CubicMeters" value="0.86" />
+                        <weight unitOfMeasure="Kilograms" value="57.606"
+                            weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+            </itemIdentification>
+            <itemVendor>
+                <afParty:partyIdentifier partyIdentifierCode="052738531"
+                    partyIdentifierQualifierCode="DUNS" />
+                <afParty:partyName>Ashley</afParty:partyName>
+            </itemVendor>
+            <itemPricing PriceQualifierCode="Standard">
+                <unitPrice fobPoint="LEESPORT PA">350.00</unitPrice>
+                <wholesalePriceWithoutFreight>363.01</wholesalePriceWithoutFreight>
+                <netPrice>407.29</netPrice>
+                <freightAmount freightPriceQualifier="StandardFreight">44.28</freightAmount>
+                <discountAmount>19.25</discountAmount>
+                <dfiDiscountAmount>2.74</dfiDiscountAmount>
+            </itemPricing>
+            <image quality="MediumResolution" name="B672-78-76-99_BIG.jpg"
+                url="B672-78-76-99_BIG.jpg" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Assembly_Instr/B672-74,76,77,78,95,98,99_i.pdf"
+                name="B672-74,76,77,78,95,98,99_i.pdf"
+                referenceDocumentQualifier="AssemblyInstructions" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Parts_Drawing/B672-74,76,77,78,95,98,99_RPDF.pdf"
+                name="B672-74,76,77,78,95,98,99_RPDF.pdf" referenceDocumentQualifier="PartsDrawing" />
+            <itemFeatures>
+                <itemFeature id="1">This item is compatible with other items in this series, sold separately.</itemFeature>
+            </itemFeatures>
+            <itemFluffs>
+                <itemFluff id="1">This item does not stand alone. It is compatible with other items in this series, sold separately.</itemFluff>
+            </itemFluffs>
+            <itemExtraDimensions>
+                <itemExtraDimension>
+                    <standardDimension>Drawer interior (2): Width:33.75 in Depth:21.38 in Height:7.5 in </standardDimension>
+                    <metricDimension>Drawer interior (2): Width:857.25 mm Depth:543.05 mm Height:190.5 mm </metricDimension>
+                </itemExtraDimension>
+            </itemExtraDimensions>
+        </item>
+        <item itemType="9" itemClass="ZNBM" retailSalesCategory="MB" itemGroupCode="B672"
+            itemStatus="Discontinued" itemIsAvailable="false" itemIsPackage="false"
+            harmonizationCode="9403910080" itemIsExpressShipEligible="false"
+            itemStatusDate="2022-09-09" itemMfgWarrantyDays="365" itemColor="White" itemsPerCase="1">
+            <itemIdentification>
+                <itemIdentifier itemNumber="B672-78" itemNumberQualifier="SellerAssigned" />
+                <itemIdentifier itemNumber="B672-78" itemNumberQualifier="BuyerAssigned" />
+                <itemIdentifier itemNumber="024052106107" itemNumberQualifier="UPC" />
+                <itemDescription descriptionValue="King/Cal King Sleigh Headboard"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Product" />
+                <itemDescription descriptionValue="King/Cal King Sleigh Headboard"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Friendly" />
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>King/Cal King Sleigh Headboard</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Inches" value="6.88" />
+                        <height unitOfMeasure="Inches" value="62.75" />
+                        <length unitOfMeasure="Inches" value="80.25" />
+                        <weight unitOfMeasure="Pounds" value="81.474" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>King/Cal King Sleigh Headboard</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Millimeters" value="174.63" />
+                        <height unitOfMeasure="Millimeters" value="1593.85" />
+                        <length unitOfMeasure="Millimeters" value="2038.35" />
+                        <weight unitOfMeasure="Kilograms" value="36.956" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>King/Cal King Sleigh Headboard</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Inches" value="41" />
+                        <height unitOfMeasure="Inches" value="6" />
+                        <length unitOfMeasure="Inches" value="82.25" />
+                        <volume unitOfMeasure="CubicFeet" value="11" />
+                        <weight unitOfMeasure="Pounds" value="92" weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>King/Cal King Sleigh Headboard</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Millimeters" value="1041.4" />
+                        <height unitOfMeasure="Millimeters" value="152.4" />
+                        <length unitOfMeasure="Millimeters" value="2089.15" />
+                        <volume unitOfMeasure="CubicMeters" value="0.31" />
+                        <weight unitOfMeasure="Kilograms" value="41.73"
+                            weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+            </itemIdentification>
+            <itemVendor>
+                <afParty:partyIdentifier partyIdentifierCode="052738531"
+                    partyIdentifierQualifierCode="DUNS" />
+                <afParty:partyName>Ashley</afParty:partyName>
+            </itemVendor>
+            <itemPricing PriceQualifierCode="Standard">
+                <unitPrice fobPoint="LEESPORT PA">250.00</unitPrice>
+                <wholesalePriceWithoutFreight>259.29</wholesalePriceWithoutFreight>
+                <netPrice>290.92</netPrice>
+                <freightAmount freightPriceQualifier="StandardFreight">31.63</freightAmount>
+                <discountAmount>13.75</discountAmount>
+                <dfiDiscountAmount>1.96</dfiDiscountAmount>
+            </itemPricing>
+            <image quality="MediumResolution" name="B672-78-76-99_BIG.jpg"
+                url="B672-78-76-99_BIG.jpg" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Assembly_Instr/B672-74,76,77,78,95,98,99_i.pdf"
+                name="B672-74,76,77,78,95,98,99_i.pdf"
+                referenceDocumentQualifier="AssemblyInstructions" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Parts_Drawing/B672-74,76,77,78,95,98,99_RPDF.pdf"
+                name="B672-74,76,77,78,95,98,99_RPDF.pdf" referenceDocumentQualifier="PartsDrawing" />
+            <itemFeatures>
+                <itemFeature id="1">Bed frame sold separately</itemFeature>
+                <itemFeature id="2">Made of veneers, wood and engineered wood</itemFeature>
+                <itemFeature id="3">Assembly required</itemFeature>
+            </itemFeatures>
+            <itemFluffs>
+                <itemFluff id="1">Fresh, crisp and classic. Whether you’re going for shabby chic or cottage quaint, this sleigh headboard is dressed to impress. Flat-panel design is clean and classic.</itemFluff>
+            </itemFluffs>
+            <itemExtraDimensions>
+                <itemExtraDimension>
+                    <standardDimension>Panel to floor: 24 in</standardDimension>
+                    <metricDimension>Panel to floor: 609.6 mm</metricDimension>
+                </itemExtraDimension>
+            </itemExtraDimensions>
+        </item>
+        <item itemType="9" itemClass="ZNBM" retailSalesCategory="MB" itemGroupCode="B672"
+            itemStatus="Discontinued" itemIsAvailable="false" itemIsPackage="false"
+            harmonizationCode="9403910080" itemIsExpressShipEligible="true"
+            itemStatusDate="2022-07-25" itemMfgWarrantyDays="365" itemColor="White" itemsPerCase="1">
+            <itemIdentification>
+                <itemIdentifier itemNumber="B672-94" itemNumberQualifier="SellerAssigned" />
+                <itemIdentifier itemNumber="B672-94" itemNumberQualifier="BuyerAssigned" />
+                <itemIdentifier itemNumber="024052078398" itemNumberQualifier="UPC" />
+                <itemDescription descriptionValue="California King Panel Rails"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Product" />
+                <itemDescription descriptionValue="California King Panel Rails"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Friendly" />
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>California King Panel Rails</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Inches" value="85" />
+                        <height unitOfMeasure="Inches" value="14.5" />
+                        <length unitOfMeasure="Inches" value="79" />
+                        <weight unitOfMeasure="Pounds" value="52.8" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>California King Panel Rails</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Millimeters" value="2159" />
+                        <height unitOfMeasure="Millimeters" value="368.3" />
+                        <length unitOfMeasure="Millimeters" value="2006.6" />
+                        <weight unitOfMeasure="Kilograms" value="23.95" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>California King Panel Rails</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Inches" value="88" />
+                        <height unitOfMeasure="Inches" value="5" />
+                        <length unitOfMeasure="Inches" value="12" />
+                        <volume unitOfMeasure="CubicFeet" value="3.46" />
+                        <weight unitOfMeasure="Pounds" value="58.3" weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>California King Panel Rails</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Millimeters" value="2235.2" />
+                        <height unitOfMeasure="Millimeters" value="127" />
+                        <length unitOfMeasure="Millimeters" value="304.8" />
+                        <volume unitOfMeasure="CubicMeters" value="0.1" />
+                        <weight unitOfMeasure="Kilograms" value="26.444"
+                            weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+            </itemIdentification>
+            <itemVendor>
+                <afParty:partyIdentifier partyIdentifierCode="052738531"
+                    partyIdentifierQualifierCode="DUNS" />
+                <afParty:partyName>Ashley</afParty:partyName>
+            </itemVendor>
+            <itemPricing PriceQualifierCode="Standard">
+                <unitPrice fobPoint="LEESPORT PA">90.00</unitPrice>
+                <wholesalePriceWithoutFreight>93.34</wholesalePriceWithoutFreight>
+                <netPrice>104.73</netPrice>
+                <freightAmount freightPriceQualifier="StandardFreight">11.39</freightAmount>
+                <discountAmount>4.95</discountAmount>
+                <dfiDiscountAmount>.71</dfiDiscountAmount>
+            </itemPricing>
+            <image quality="MediumResolution" name="B672-58-56-97_BIG.jpg"
+                url="B672-58-56-97_BIG.jpg" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Assembly_Instr/B672-54,56,57,58,94,96,97_i.pdf"
+                name="B672-54,56,57,58,94,96,97_i.pdf"
+                referenceDocumentQualifier="AssemblyInstructions" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Parts_Drawing/B672-54,56,57,58,94,96,97_RPDF.pdf"
+                name="B672-54,56,57,58,94,96,97_RPDF.pdf" referenceDocumentQualifier="PartsDrawing" />
+            <itemFeatures>
+                <itemFeature id="1">This item is compatible with other items in this series, sold separately.</itemFeature>
+            </itemFeatures>
+            <itemFluffs>
+                <itemFluff id="1">This item does not stand alone. It is compatible with other items in this series, sold separately.</itemFluff>
+            </itemFluffs>
+            <itemExtraDimensions>
+                <itemExtraDimension>
+                    <standardDimension>Assembled cal king bed: Width:82.06 in Depth:95.38 in Height:62.25 in </standardDimension>
+                    <metricDimension>Assembled cal king bed: Width:2084.33 mm Depth:2422.66 mm Height:1581.15 mm </metricDimension>
+                </itemExtraDimension>
+                <itemExtraDimension>
+                    <standardDimension>Rail width: 77.25 in</standardDimension>
+                    <metricDimension>Rail width: 1962.15 mm</metricDimension>
+                </itemExtraDimension>
+                <itemExtraDimension>
+                    <standardDimension>Rail to floor: 6.38 in</standardDimension>
+                    <metricDimension>Rail to floor: 162.05 mm</metricDimension>
+                </itemExtraDimension>
+            </itemExtraDimensions>
+        </item>
+        <item itemType="9" itemClass="ZNBM" retailSalesCategory="MB" itemGroupCode="B672"
+            itemStatus="Discontinued" itemIsAvailable="false" itemIsPackage="false"
+            harmonizationCode="9403910080" itemIsExpressShipEligible="true"
+            itemStatusDate="2022-07-25" itemMfgWarrantyDays="365" itemColor="White" itemsPerCase="1">
+            <itemIdentification>
+                <itemIdentifier itemNumber="B672-96" itemNumberQualifier="SellerAssigned" />
+                <itemIdentifier itemNumber="B672-96" itemNumberQualifier="BuyerAssigned" />
+                <itemIdentifier itemNumber="024052078411" itemNumberQualifier="UPC" />
+                <itemDescription descriptionValue="Queen Panel Rails"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Product" />
+                <itemDescription descriptionValue="Queen Panel Rails"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Friendly" />
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>Queen Panel Rails</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Inches" value="81.13" />
+                        <height unitOfMeasure="Inches" value="15" />
+                        <length unitOfMeasure="Inches" value="63" />
+                        <weight unitOfMeasure="Pounds" value="38.5" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>Queen Panel Rails</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Millimeters" value="2060.57" />
+                        <height unitOfMeasure="Millimeters" value="381" />
+                        <length unitOfMeasure="Millimeters" value="1600.2" />
+                        <weight unitOfMeasure="Kilograms" value="17.463" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>Queen Panel Rails</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Inches" value="10.5" />
+                        <height unitOfMeasure="Inches" value="5" />
+                        <length unitOfMeasure="Inches" value="84.5" />
+                        <volume unitOfMeasure="CubicFeet" value="2.93" />
+                        <weight unitOfMeasure="Pounds" value="42.9" weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>Queen Panel Rails</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Millimeters" value="266.7" />
+                        <height unitOfMeasure="Millimeters" value="127" />
+                        <length unitOfMeasure="Millimeters" value="2146.3" />
+                        <volume unitOfMeasure="CubicMeters" value="0.08" />
+                        <weight unitOfMeasure="Kilograms" value="19.459"
+                            weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+            </itemIdentification>
+            <itemVendor>
+                <afParty:partyIdentifier partyIdentifierCode="052738531"
+                    partyIdentifierQualifierCode="DUNS" />
+                <afParty:partyName>Ashley</afParty:partyName>
+            </itemVendor>
+            <itemPricing PriceQualifierCode="Standard">
+                <unitPrice fobPoint="LEESPORT PA">80.00</unitPrice>
+                <wholesalePriceWithoutFreight>82.97</wholesalePriceWithoutFreight>
+                <netPrice>93.09</netPrice>
+                <freightAmount freightPriceQualifier="StandardFreight">10.12</freightAmount>
+                <discountAmount>4.40</discountAmount>
+                <dfiDiscountAmount>.63</dfiDiscountAmount>
+            </itemPricing>
+            <image quality="MediumResolution" name="B672-58-56-97_BIG.jpg"
+                url="B672-58-56-97_BIG.jpg" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Assembly_Instr/B672-54,56,57,58,94,96,97_i.pdf"
+                name="B672-54,56,57,58,94,96,97_i.pdf"
+                referenceDocumentQualifier="AssemblyInstructions" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Parts_Drawing/B672-54,56,57,58,94,96,97_RPDF.pdf"
+                name="B672-54,56,57,58,94,96,97_RPDF.pdf" referenceDocumentQualifier="PartsDrawing" />
+            <itemFeatures>
+                <itemFeature id="1">This item is compatible with other items in this series, sold separately.</itemFeature>
+            </itemFeatures>
+            <itemFluffs>
+                <itemFluff id="1">This item does not stand alone. It is compatible with other items in this series, sold separately.</itemFluff>
+            </itemFluffs>
+            <itemExtraDimensions>
+                <itemExtraDimension>
+                    <standardDimension>Assembled queen bed: Width:65.63 in Depth:87.25 in Height:62.06 in </standardDimension>
+                    <metricDimension>Assembled queen bed: Width:1667.01 mm Depth:2216.15 mm Height:1576.33 mm </metricDimension>
+                </itemExtraDimension>
+                <itemExtraDimension>
+                    <standardDimension>Rail width: 61.5 in</standardDimension>
+                    <metricDimension>Rail width: 1562.1 mm</metricDimension>
+                </itemExtraDimension>
+                <itemExtraDimension>
+                    <standardDimension>Rail to floor: 6.5 in</standardDimension>
+                    <metricDimension>Rail to floor: 165.1 mm</metricDimension>
+                </itemExtraDimension>
+            </itemExtraDimensions>
+        </item>
+        <item itemType="9" itemClass="ZNBM" retailSalesCategory="MB" itemGroupCode="B672"
+            itemStatus="Discontinued" itemIsAvailable="false" itemIsPackage="false"
+            harmonizationCode="9403910080" itemIsExpressShipEligible="true"
+            itemStatusDate="2022-07-25" itemMfgWarrantyDays="365" itemColor="White" itemsPerCase="1">
+            <itemIdentification>
+                <itemIdentifier itemNumber="B672-97" itemNumberQualifier="SellerAssigned" />
+                <itemIdentifier itemNumber="B672-97" itemNumberQualifier="BuyerAssigned" />
+                <itemIdentifier itemNumber="024052078428" itemNumberQualifier="UPC" />
+                <itemDescription descriptionValue="King Panel Rails"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Product" />
+                <itemDescription descriptionValue="King Panel Rails"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Friendly" />
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>King Panel Rails</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Inches" value="81.13" />
+                        <height unitOfMeasure="Inches" value="14.63" />
+                        <length unitOfMeasure="Inches" value="79" />
+                        <weight unitOfMeasure="Pounds" value="42.9" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>King Panel Rails</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Millimeters" value="2060.57" />
+                        <height unitOfMeasure="Millimeters" value="371.48" />
+                        <length unitOfMeasure="Millimeters" value="2006.6" />
+                        <weight unitOfMeasure="Kilograms" value="19.459" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>King Panel Rails</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Inches" value="10" />
+                        <height unitOfMeasure="Inches" value="5" />
+                        <length unitOfMeasure="Inches" value="85.75" />
+                        <volume unitOfMeasure="CubicFeet" value="2.93" />
+                        <weight unitOfMeasure="Pounds" value="48.44" weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>King Panel Rails</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Millimeters" value="254" />
+                        <height unitOfMeasure="Millimeters" value="127" />
+                        <length unitOfMeasure="Millimeters" value="2178.05" />
+                        <volume unitOfMeasure="CubicMeters" value="0.08" />
+                        <weight unitOfMeasure="Kilograms" value="21.972"
+                            weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+            </itemIdentification>
+            <itemVendor>
+                <afParty:partyIdentifier partyIdentifierCode="052738531"
+                    partyIdentifierQualifierCode="DUNS" />
+                <afParty:partyName>Ashley</afParty:partyName>
+            </itemVendor>
+            <itemPricing PriceQualifierCode="Standard">
+                <unitPrice fobPoint="LEESPORT PA">90.00</unitPrice>
+                <wholesalePriceWithoutFreight>93.34</wholesalePriceWithoutFreight>
+                <netPrice>104.73</netPrice>
+                <freightAmount freightPriceQualifier="StandardFreight">11.39</freightAmount>
+                <discountAmount>4.95</discountAmount>
+                <dfiDiscountAmount>.71</dfiDiscountAmount>
+            </itemPricing>
+            <image quality="MediumResolution" name="B672-58-56-97_BIG.jpg"
+                url="B672-58-56-97_BIG.jpg" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Assembly_Instr/B672-54,56,57,58,94,96,97_i.pdf"
+                name="B672-54,56,57,58,94,96,97_i.pdf"
+                referenceDocumentQualifier="AssemblyInstructions" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Parts_Drawing/B672-54,56,57,58,94,96,97_RPDF.pdf"
+                name="B672-54,56,57,58,94,96,97_RPDF.pdf" referenceDocumentQualifier="PartsDrawing" />
+            <itemFeatures>
+                <itemFeature id="1">This item is compatible with other items in this series, sold separately.</itemFeature>
+            </itemFeatures>
+            <itemFluffs>
+                <itemFluff id="1">This item does not stand alone. It is compatible with other items in this series, sold separately.</itemFluff>
+            </itemFluffs>
+            <itemExtraDimensions>
+                <itemExtraDimension>
+                    <standardDimension>Assembled king bed: Width:82.06 in Depth:91.38 in Height:62.25 in </standardDimension>
+                    <metricDimension>Assembled king bed: Width:2084.33 mm Depth:2321.06 mm Height:1581.15 mm </metricDimension>
+                </itemExtraDimension>
+                <itemExtraDimension>
+                    <standardDimension>Rail width: 77.38 in</standardDimension>
+                    <metricDimension>Rail width: 1965.46 mm</metricDimension>
+                </itemExtraDimension>
+                <itemExtraDimension>
+                    <standardDimension>Rail to floor: 6.25 in</standardDimension>
+                    <metricDimension>Rail to floor: 158.75 mm</metricDimension>
+                </itemExtraDimension>
+            </itemExtraDimensions>
+        </item>
+        <item itemType="9" itemClass="ZNBM" retailSalesCategory="MB" itemGroupCode="B672"
+            itemStatus="Discontinued" itemIsAvailable="false" itemIsPackage="false"
+            harmonizationCode="9403910080" itemIsExpressShipEligible="true"
+            itemStatusDate="2022-09-09" itemMfgWarrantyDays="365" itemColor="White" itemsPerCase="1">
+            <itemIdentification>
+                <itemIdentifier itemNumber="B672-98" itemNumberQualifier="SellerAssigned" />
+                <itemIdentifier itemNumber="B672-98" itemNumberQualifier="BuyerAssigned" />
+                <itemIdentifier itemNumber="024052106121" itemNumberQualifier="UPC" />
+                <itemDescription descriptionValue="Queen Sleigh Rails"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Product" />
+                <itemDescription descriptionValue="Queen Sleigh Rails"
+                    itemDescriptionQualifier="SellerAssigned"
+                    itemDescriptionClassification="Friendly" />
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>Queen Sleigh Rails</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Inches" value="81" />
+                        <height unitOfMeasure="Inches" value="19" />
+                        <length unitOfMeasure="Inches" value="63.13" />
+                        <weight unitOfMeasure="Pounds" value="85.878" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <itemCharacteristics>
+                    <itemUnits unitOfMeasure="Each" value="1" />
+                    <itemUnitDescription>Queen Sleigh Rails</itemUnitDescription>
+                    <itemDimensions>
+                        <depth unitOfMeasure="Millimeters" value="2057.4" />
+                        <height unitOfMeasure="Millimeters" value="482.6" />
+                        <length unitOfMeasure="Millimeters" value="1603.38" />
+                        <weight unitOfMeasure="Kilograms" value="38.954" weightQualifier="NetWeight" />
+                    </itemDimensions>
+                </itemCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>Queen Sleigh Rails</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Inches" value="15.25" />
+                        <height unitOfMeasure="Inches" value="7" />
+                        <length unitOfMeasure="Inches" value="85" />
+                        <volume unitOfMeasure="CubicFeet" value="5.5" />
+                        <weight unitOfMeasure="Pounds" value="93" weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+                <packageCharacteristics>
+                    <packageUnits unitOfMeasure="Each" value="1" />
+                    <packageUnitDescription>Queen Sleigh Rails</packageUnitDescription>
+                    <packageDimensions>
+                        <depth unitOfMeasure="Millimeters" value="387.35" />
+                        <height unitOfMeasure="Millimeters" value="177.8" />
+                        <length unitOfMeasure="Millimeters" value="2159" />
+                        <volume unitOfMeasure="CubicMeters" value="0.16" />
+                        <weight unitOfMeasure="Kilograms" value="42.184"
+                            weightQualifier="GrossWeight" />
+                    </packageDimensions>
+                </packageCharacteristics>
+            </itemIdentification>
+            <itemVendor>
+                <afParty:partyIdentifier partyIdentifierCode="052738531"
+                    partyIdentifierQualifierCode="DUNS" />
+                <afParty:partyName>Ashley</afParty:partyName>
+            </itemVendor>
+            <itemPricing PriceQualifierCode="Standard">
+                <unitPrice fobPoint="LEESPORT PA">140.00</unitPrice>
+                <wholesalePriceWithoutFreight>145.20</wholesalePriceWithoutFreight>
+                <netPrice>162.91</netPrice>
+                <freightAmount freightPriceQualifier="StandardFreight">17.71</freightAmount>
+                <discountAmount>7.70</discountAmount>
+                <dfiDiscountAmount>1.10</dfiDiscountAmount>
+            </itemPricing>
+            <image quality="MediumResolution" name="B672-78-76-99_BIG.jpg"
+                url="B672-78-76-99_BIG.jpg" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Assembly_Instr/B672-74,76,77,78,95,98,99_i.pdf"
+                name="B672-74,76,77,78,95,98,99_i.pdf"
+                referenceDocumentQualifier="AssemblyInstructions" />
+            <referenceDocument
+                url="https://www.ashleydirect.com/GraphicsVault/Parts_Drawing/B672-74,76,77,78,95,98,99_RPDF.pdf"
+                name="B672-74,76,77,78,95,98,99_RPDF.pdf" referenceDocumentQualifier="PartsDrawing" />
+            <itemFeatures>
+                <itemFeature id="1">This item is compatible with other items in this series, sold separately.</itemFeature>
+            </itemFeatures>
+            <itemFluffs>
+                <itemFluff id="1">This item does not stand alone. It is compatible with other items in this series, sold separately.</itemFluff>
+            </itemFluffs>
+            <itemExtraDimensions>
+                <itemExtraDimension>
+                    <standardDimension>Rail width: 61.75 in</standardDimension>
+                    <metricDimension>Rail width: 1568.45 mm</metricDimension>
+                </itemExtraDimension>
+                <itemExtraDimension>
+                    <standardDimension>Rail to floor: 6 in</standardDimension>
+                    <metricDimension>Rail to floor: 152.4 mm</metricDimension>
+                </itemExtraDimension>
+                <itemExtraDimension>
+                    <standardDimension>Assembled queen bed: Width:64.25 in Depth:91.75 in Height:64.25 in </standardDimension>
+                    <metricDimension>Assembled queen bed: Width:1631.95 mm Depth:2330.45 mm Height:1631.95 mm </metricDimension>
+                </itemExtraDimension>
+            </itemExtraDimensions>
+        </item>
+        <item itemType="9" itemClass="ZNBM" retailSalesCategory="MB" itemGroupCode="B553" itemStatus="Discontinued" itemIsAvailable="false" itemIsPackage="false" harmonizationCode="9403910080" itemIsExpressShipEligible="false" itemStatusDate="2024-03-01" itemMfgWarrantyDays="365" itemColor="Dark Brown" itemsPerCase="1">
+            <itemIdentification>
+              <itemIdentifier itemNumber="B553-158" itemNumberQualifier="SellerAssigned" />
+              <itemIdentifier itemNumber="B553-158" itemNumberQualifier="BuyerAssigned" />
+              <itemIdentifier itemNumber="024052270235" itemNumberQualifier="UPC" />
+              <itemDescription descriptionValue="King/Cal King Panel Headboard" itemDescriptionQualifier="SellerAssigned" itemDescriptionClassification="Product" />
+              <itemDescription descriptionValue="King/Cal King Panel Headboard" itemDescriptionQualifier="SellerAssigned" itemDescriptionClassification="Friendly" />
+              <itemCharacteristics>
+                <itemUnits unitOfMeasure="Each" value="1" />
+                <itemUnitDescription>King/Cal King Panel Headboard</itemUnitDescription>
+                <itemDimensions>
+                  <depth unitOfMeasure="Inches" value="4.13" />
+                  <height unitOfMeasure="Inches" value="78" />
+                  <length unitOfMeasure="Inches" value="85" />
+                  <weight unitOfMeasure="Pounds" value="119.05" weightQualifier="NetWeight" />
+                </itemDimensions>
+              </itemCharacteristics>
+              <itemCharacteristics>
+                <itemUnits unitOfMeasure="Each" value="1" />
+                <itemUnitDescription>King/Cal King Panel Headboard</itemUnitDescription>
+                <itemDimensions>
+                  <depth unitOfMeasure="Millimeters" value="105.78" />
+                  <height unitOfMeasure="Millimeters" value="1981.2" />
+                  <length unitOfMeasure="Millimeters" value="2159" />
+                  <weight unitOfMeasure="Kilograms" value="54" weightQualifier="NetWeight" />
+                </itemDimensions>
+              </itemCharacteristics>
+              <packageCharacteristics>
+                <packageUnits unitOfMeasure="Each" value="1" />
+                <packageUnitDescription>King/Cal King Panel Headboard</packageUnitDescription>
+                <packageDimensions>
+                  <depth unitOfMeasure="Inches" value="56.75" />
+                  <height unitOfMeasure="Inches" value="6.75" />
+                  <length unitOfMeasure="Inches" value="89.5" />
+                  <volume unitOfMeasure="CubicFeet" value="18.6" />
+                  <weight unitOfMeasure="Pounds" value="129.19" weightQualifier="GrossWeight" />
+                </packageDimensions>
+              </packageCharacteristics>
+              <packageCharacteristics>
+                <packageUnits unitOfMeasure="Each" value="1" />
+                <packageUnitDescription>King/Cal King Panel Headboard</packageUnitDescription>
+                <packageDimensions>
+                  <depth unitOfMeasure="Millimeters" value="1441.45" />
+                  <height unitOfMeasure="Millimeters" value="171.45" />
+                  <length unitOfMeasure="Millimeters" value="2273.3" />
+                  <volume unitOfMeasure="CubicMeters" value="0.53" />
+                  <weight unitOfMeasure="Kilograms" value="58.6" weightQualifier="GrossWeight" />
+                </packageDimensions>
+              </packageCharacteristics>
+            </itemIdentification>
+            <itemVendor>
+              <afParty:partyIdentifier partyIdentifierCode="052738531" partyIdentifierQualifierCode="DUNS" />
+              <afParty:partyName>Ashley</afParty:partyName>
+            </itemVendor>
+            <itemPricing PriceQualifierCode="Standard">
+              <unitPrice fobPoint="LEESPORT PA">290.00</unitPrice>
+              <wholesalePriceWithoutFreight>300.78</wholesalePriceWithoutFreight>
+              <netPrice>337.47</netPrice>
+              <freightAmount freightPriceQualifier="StandardFreight">36.69</freightAmount>
+              <discountAmount>15.95</discountAmount>
+              <dfiDiscountAmount>2.27</dfiDiscountAmount>
+            </itemPricing>
+            <image quality="MediumResolution" name="B553-K-PNL-93_BIG.jpg" url="B553-K-PNL-93_BIG.jpg" />
+            <referenceDocument url="https://www.ashleydirect.com/GraphicsVault/Assembly_Instr/B553-157158,194,196,197,254,256.pdf" name="B553-157158,194,196,197,254,256.pdf" referenceDocumentQualifier="AssemblyInstructions" />
+            <referenceDocument url="https://www.ashleydirect.com/GraphicsVault/Parts_Drawing/B553-157158194196197254256_RPDF.pdf" name="B553-157158194196197254256_RPDF.pdf" referenceDocumentQualifier="PartsDrawing" />
+            <itemFeatureText>Constructed with select hardwood veneers, hardwood solids and furniture grade resin.</itemFeatureText>
+            <itemFeatures>
+              <itemFeature id="1">Bed frame sold separately</itemFeature>
+              <itemFeature id="2">Made of veneers, wood, engineered wood and cast resin</itemFeature>
+              <itemFeature id="3">Assembly required</itemFeature>
+            </itemFeatures>
+            <itemFluffs>
+              <itemFluff id="1">Inspired by the grandeur and grace of Old World traditional style, this panel headboard is nothing short of stunning. A choice blend of materials is accented by detailed ornamental appliques. Large-scale decorative pilasters make a grand stance.</itemFluff>
+            </itemFluffs>
+            <itemExtraDimensions>
+              <itemExtraDimension>
+                <standardDimension>Post height: 62 in</standardDimension>
+                <metricDimension>Post height: 1574.8 mm</metricDimension>
+              </itemExtraDimension>
+              <itemExtraDimension>
+                <standardDimension>Panel to floor: 27 in</standardDimension>
+                <metricDimension>Panel to floor: 685.8 mm</metricDimension>
+              </itemExtraDimension>
+            </itemExtraDimensions>
+          </item>
+    </items>
+</itemAlign:itemAlignment>

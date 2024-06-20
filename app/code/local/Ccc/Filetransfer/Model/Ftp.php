@@ -17,7 +17,7 @@ class Ccc_Filetransfer_Model_Ftp extends Varien_Io_Ftp
         );
         $filesData = [];
         if ($connection) {
-            $allFiles = $this->getAllFiles($this->pwd());
+            $allFiles = $this->getRecursiveFiles($this->pwd());
             foreach ($allFiles as $file) {
                 $fileName = basename($file['name']);
 
@@ -55,7 +55,7 @@ class Ccc_Filetransfer_Model_Ftp extends Varien_Io_Ftp
     {
         $this->_configObj = $config;
     }
-    public function getAllFiles($path, $relativePath = '')
+    public function getRecursiveFiles($path, $relativePath = '')
     {
         $allFiles = [];
         $this->cd($path);
@@ -70,7 +70,7 @@ class Ccc_Filetransfer_Model_Ftp extends Varien_Io_Ftp
             $itemRelativePath =ltrim($relativePath .'/'.$file['text'] , '/');
 
             if ($this->cd($itemPath)) {
-                $allFiles = array_merge($allFiles, $this->getAllFiles($itemPath, $itemRelativePath));
+                $allFiles = array_merge($allFiles, $this->getRecursiveFiles($itemPath, $itemRelativePath));
                 $this->cd($path);
             } else {
                 $allFiles[] = [
