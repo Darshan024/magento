@@ -45,3 +45,50 @@ tr:hover {
     z-index: 1000;
     width: 400px;
 }
+/* Basic styling for the comment container */
+#comment_1 {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* Styling for the reply section */
+.reply-section {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+/* Styling for the textarea */
+.replyTextarea {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Styling for buttons */
+button {
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+/* Specific styling for the Save button */
+
+
+/* Hover effect for buttons */
+button:hover {
+    opacity: 0.9;
+}

@@ -64,38 +64,6 @@ class Ccc_Ticket_Block_Adminhtml_Ticket extends Mage_Adminhtml_Block_Widget_Cont
     {
         return $this->getRequest()->getParam('p');
     }
-    public function getLastComment($userId, $collection)
-    {
-        $collection->getSelect()->joinLeft(
-            array('tc' => $collection->getTable('ticket/comment')),
-            'main_table.ticket_id = tc.ticket_id',
-            array()
-        );
-        $salesmanColumns = array(
-            'main_table.ticket_id',
-            'MAX(tc.created_at) as created_max',
-        );
-
-        $collection->getSelect()->reset(Zend_Db_Select::COLUMNS)
-            ->columns(
-                $salesmanColumns
-            );
-        $collection->getSelect()->joinLeft(
-            array('tk' => $collection->getTable('ticket/comment')),
-            'main_table.ticket_id = tk.ticket_id AND tk.created_at=MAX(tc.created_at)',
-            array()
-        );
-        $collection->getSelect()->group('main_table.ticket_id');
-        print_r($collection->getData());
-        die;
-        $tickets = [];
-        foreach ($collection as $comment) {
-            if ($comment->getUserId() == $userId) {
-                $tickets[] = $comment->getTicketId();
-            }
-        }
-        return $tickets;
-    }
     public function getLastCommentTikets($userId)
     {
         $commentCollection = Mage::getModel('ticket/comment')->getCollection();

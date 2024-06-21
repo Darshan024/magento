@@ -10,8 +10,9 @@ class Ccc_Ticket_Block_Adminhtml_Edit extends Mage_Adminhtml_Block_Widget_Contai
         parent::__construct();
         $this->removeButton('add');
     }
-    public function getTicket($Id){
-        $ticket = Mage::getModel('ticket/ticket')->load($Id);
+    public function getTicket(){
+        $id = $this->getRequest()->getParam('ticket_id');
+        $ticket = Mage::getModel('ticket/ticket')->load($id);
         return $ticket;
     }
     public function getUserCollection()
@@ -31,9 +32,43 @@ class Ccc_Ticket_Block_Adminhtml_Edit extends Mage_Adminhtml_Block_Widget_Contai
     public function getCurrentUser(){
         return Mage::getSingleton('admin/session')->getUser()->getId();
     }
-    public function getCommentData($id){
+    public function getCommentData(){
+        $id = $this->getRequest()->getParam('ticket_id');
         $comments = Mage::getModel('ticket/comment')->getCollection()->addFieldToFilter('ticket_id', $id);
-        return $comments->getData();
+        $commentsData = [];
+        foreach($comments as $comment){
+            if ($comment->getParentId() == 0) {
+                $commentsData[] = [
+                    'comment_id' => $comment->getId(),
+                    'user_id' => $comment->getUserId(),
+                    'comment' => $comment->getComment(),
+                    'parent_id' => $comment->getParentId(),
+                    'created_at' => $comment->getCreatedAt(),
+                    'is_locked'=>$comment->getIsLocked(),
+                    'replies' => $this->getCommentsHierarchy($comment->getId())
+                ];
+            }
+        }
+        return $commentsData;
+    }
+    public function getCommentsHierarchy($parentId)
+    {
+        $commentsCollection = Mage::getModel('ticket/comment')->getCollection()
+            ->addFieldToFilter('parent_id',$parentId);
+        $commentsData = [];
+
+        foreach ($commentsCollection as $comment) {
+            $commentsData[] = [
+                'comment_id' => $comment->getId(),
+                'user_id' => $comment->getUserId(),
+                'comment' => $comment->getComment(),
+                'parent_id' => $comment->getParentId(),
+                'created_at' => $comment->getCreatedAt(),
+                'is_locked'=>$comment->getIsLocked(),
+                'replies' => $this->getCommentsHierarchy($comment->getId())
+            ];
+        }
+        return $commentsData;
     }
 }
 ?>

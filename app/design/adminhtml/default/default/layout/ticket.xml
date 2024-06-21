@@ -13,7 +13,9 @@
     <adminhtml_ticket_view>
         <reference name="head">
             <action method="addJs"><script>ticket/grid.js</script></action>
+            <action method="addJs"><script>ticket/comment.js</script></action>
             <action method="addCss"><name>ticket/grid.css</name></action>
+            <action method="addCss"><name>ticket/grid2.css</name></action>
         </reference>
         <reference name="content">
             <block type="ticket/adminhtml_edit" name="ticket.info.edit"/>

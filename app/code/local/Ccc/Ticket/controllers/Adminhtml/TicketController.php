@@ -68,7 +68,8 @@ class Ccc_Ticket_Adminhtml_TicketController extends Mage_Adminhtml_Controller_Ac
             $commentData = [
                 'ticket_id' => $ticketId,
                 'comment' => $data['comment'],
-                'user_id' => $data['user_id']
+                'user_id' => $data['user_id'],
+                'is_locked'=>1
             ];
             $commentModel->setData($commentData)->save();
         }
@@ -90,6 +91,20 @@ class Ccc_Ticket_Adminhtml_TicketController extends Mage_Adminhtml_Controller_Ac
         ];
         $filterModel = Mage::getModel('ticket/filter')->setData($filterData)->save();
         $this->_redirect('*/*/index');
+    }
+    public function savechildcommentAction(){
+        $data=$this->getRequest()->getParams();
+        $commentModel = Mage::getModel('ticket/comment')->setData($data)->save();
+        $this->getResponse()->setBody(json_encode($data));
+    }
+    public function savelockAction(){
+        $data = $this->getRequest()->getParams();
+        $commentModel = Mage::getModel('ticket/comment');
+        $commentCollection = $commentModel->getCollection()->addFieldToFilter('parent_id', $data['comment_id']);
+        foreach($commentCollection as $comment){
+            $commentModel->load($comment->getId())->addData(['is_locked'=> 1])->save();
+        }
+        $commentModel->load($data['comment_id'])->addData(['is_locked'=> 2])->save();
     }
 }
 ?>

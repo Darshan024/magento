@@ -1,0 +1,44 @@
+#comments-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+#comments-table th, #comments-table td {
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-collapse: collapse;
+}
+
+#comments-table th {
+    background-color: #f4f4f4;
+}
+
+.add-reply-btn, .save-reply-btn, .cancel-reply-btn {
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px 0;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.reply-textarea {
+    width: 100%;
+    height: 60px;
+    resize: none;
+}
+
+.reply-row td {
+    border: none;
+}
+
+.comment-text{
+    width: 300px;
+}
