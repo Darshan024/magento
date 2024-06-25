@@ -1,6 +1,7 @@
 <?php
 class Ccc_Ticket_Block_Adminhtml_Edit extends Mage_Adminhtml_Block_Widget_Container
 {
+
     public function __construct()
     {
         $this->setTemplate('ticket/edit/edit.phtml');
@@ -44,7 +45,9 @@ class Ccc_Ticket_Block_Adminhtml_Edit extends Mage_Adminhtml_Block_Widget_Contai
                     'comment' => $comment->getComment(),
                     'parent_id' => $comment->getParentId(),
                     'created_at' => $comment->getCreatedAt(),
+                    'is_completed'=>$comment->getIsCompleted(),
                     'is_locked'=>$comment->getIsLocked(),
+                    'rowspan'=>$this->getRows($comment->getId()),
                     'replies' => $this->getCommentsHierarchy($comment->getId())
                 ];
             }
@@ -64,11 +67,23 @@ class Ccc_Ticket_Block_Adminhtml_Edit extends Mage_Adminhtml_Block_Widget_Contai
                 'comment' => $comment->getComment(),
                 'parent_id' => $comment->getParentId(),
                 'created_at' => $comment->getCreatedAt(),
+                'is_completed'=>$comment->getIsCompleted(),
                 'is_locked'=>$comment->getIsLocked(),
+                'rowspan'=>$this->getRows($comment->getId()),
                 'replies' => $this->getCommentsHierarchy($comment->getId())
             ];
         }
         return $commentsData;
+    }
+    public function getRows($id){
+        $commentsData = Mage::getModel('ticket/comment')->getCollection()->addFieldToFilter('parent_id', $id);
+        return count($commentsData->getData())+1;
+    }
+    public function getLocklevel(){
+        $ticketId = $this->getRequest()->getParam('ticket_id');
+        $comments = Mage::getModel('ticket/comment')->getCollection()->addFieldToFilter('ticket_id', $ticketId)->addFieldToFilter('is_locked',1);
+        $level = $comments->getFirstItem()->getLevel();
+        return $level;
     }
 }
 ?>

@@ -69,7 +69,9 @@ class Ccc_Ticket_Adminhtml_TicketController extends Mage_Adminhtml_Controller_Ac
                 'ticket_id' => $ticketId,
                 'comment' => $data['comment'],
                 'user_id' => $data['user_id'],
-                'is_locked'=>1
+                'is_completed'=>1,
+                'is_locked'=>1,
+                'level'=>0
             ];
             $commentModel->setData($commentData)->save();
         }
@@ -89,22 +91,49 @@ class Ccc_Ticket_Adminhtml_TicketController extends Mage_Adminhtml_Controller_Ac
             'filter_name' => $filterName,
             'create_at' => $createAt
         ];
-        $filterModel = Mage::getModel('ticket/filter')->setData($filterData)->save();
+        Mage::getModel('ticket/filter')->setData($filterData)->save();
         $this->_redirect('*/*/index');
     }
     public function savechildcommentAction(){
         $data=$this->getRequest()->getParams();
-        $commentModel = Mage::getModel('ticket/comment')->setData($data)->save();
-        $this->getResponse()->setBody(json_encode($data));
+        $parentId = $data['parent_id'];
+        $parentModel = Mage::getModel('ticket/comment')->load($parentId)->setData('is_completed',2)->save();
+        $level = $parentModel->getLevel();
+        $data['level'] = $level + 1;
+        $data['is_completed'] = 1;
+        $childComment=Mage::getModel('ticket/comment')->setData($data)->save();
     }
-    public function savelockAction(){
+    public function saveCompleteAction(){
         $data = $this->getRequest()->getParams();
+        $commentModel = Mage::getModel('ticket/comment')->load($data['comment_id'])->setData('is_completed',2)->save();
+    }
+    public function saveLockAction(){
+        $level=$this->getRequest()->getParam('level');
         $commentModel = Mage::getModel('ticket/comment');
-        $commentCollection = $commentModel->getCollection()->addFieldToFilter('parent_id', $data['comment_id']);
+
+        $commentCollection = $commentModel->getCollection()->addFieldToFilter('level', $level);
         foreach($commentCollection as $comment){
-            $commentModel->load($comment->getId())->addData(['is_locked'=> 1])->save();
+            $commentModel->load($comment->getId())->addData(['is_locked'=>2,'is_completed'=>2])->save();
         }
-        $commentModel->load($data['comment_id'])->addData(['is_locked'=> 2])->save();
+
+        $nextLevel = $level + 1;
+        $childComments = $commentModel->getCollection()->addFieldToFilter('level', $nextLevel);
+        foreach($childComments as $comment){
+            $commentModel->load($comment->getId())->addData(['is_locked'=>1])->save();
+        }
+    }
+    public function savequestionAction(){
+        $data = $this->getRequest()->getParams();
+        $commentData = [
+            'ticket_id' => $data['ticketId'],
+            'comment' => $data['comment'],
+            'user_id'=>$data['userId'],
+            'parent_id'=>0,
+            'is_completed'=>1,
+            'level'=>$data['level'],
+            'is_locked'=>1,
+        ];
+        Mage::getModel('ticket/comment')->setData($commentData)->save();
     }
 }
 ?>

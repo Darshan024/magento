@@ -2,6 +2,9 @@
 $ticket = $this->getTicket();
 $ticketId = $ticket->getTicketId();
 $currentUser = $this->getCurrentUser();
+$comments = $this->getCommentData();
+$currentLevel = $this->getLocklevel();
+
 ?>
 <table>
     <tr>
@@ -59,8 +62,6 @@ $currentUser = $this->getCurrentUser();
     </tr>
     </tr>
 </table>
-<?php $commentData = $this->getCommentData(); ?>
-
 <div id="comment_form">
     <form action="<?php echo Mage::getUrl('adminhtml/ticket/savecomment') ?>" method="post">
         <?php echo $this->getBlockHtml('formkey') ?>
@@ -70,50 +71,60 @@ $currentUser = $this->getCurrentUser();
         <button type="submit">Save</button>
     </form>
 </div>
-<div id="comment_container">
-    <table border="1">
-        <?php
-        function renderComments($comments, $level = 0)
-        {
-            foreach ($comments as $comment) {
-                ?>
-                <tr data-comment-id="<?php echo $comment['comment_id']; ?>"
-                    data-is-locked="<?php echo $comment['is_locked'] ? 'true' : 'false'; ?>">
-                    <td style="padding-left: <?php echo $level * 100; ?>px;">
-                        User ID: <?php echo $comment['user_id']; ?><br>
-                        Comment: <?php echo $comment['comment']; ?>
-                        Is Locked: <?php echo $comment['is_locked']; ?>
+<table border="1">
+    <?php
+    function renderComments($comments, $ticketId, $currentUser)
+    {
+        foreach ($comments as $comment):
+            ?>
+            <tr data-comment-id="<?php echo $comment['comment_id']; ?>">
+                <td rowspan="<?php echo $comment['rowspan'] ?>">
+                    User ID:<?php echo $comment['user_id']; ?><br>
+                    Comment Id:<?php echo $comment['comment_id']; ?><br>
+                    Comment:<?php echo $comment['comment']; ?><br>
+                </td>
+                <?php if ($comment['is_locked'] == 1): ?>
+                    <td>
+                        <button data-comment-id="<?php echo $comment['comment_id']; ?>"
+                            onclick="addReplyButton(<?php echo $comment['comment_id']; ?>,<?php echo $ticketId ?>,<?php echo $currentUser ?>)">Reply</button>
+                        <?php if ($comment['is_completed'] == 1): ?>
+                            <button data-comment-id="<?php echo $comment['comment_id']; ?>"
+                                onclick="completeComment(<?php echo $comment['comment_id']; ?>)">Complete</button>
+                        <?php endif; ?>
                     </td>
-                    <?php if ($comment['is_locked'] == 1) { ?>
-                        <td>
-                            <button class="replyButton" data-comment-id="<?php echo $comment['comment_id']; ?>"
-                                onclick="addReplyButton(<?php echo $comment['comment_id']; ?>)">Reply</button>
-                            <button class="lockButton" data-comment-id="<?php echo $comment['comment_id']; ?>"
-                                onclick="lockComment(<?php echo $comment['comment_id']; ?>)">Lock</button>
-                        </td>
-                    <?php } ?>
-                    <?php
-                    if (!empty($comment['replies'])) { ?>
-                        <td>
-                        <?php renderComments($comment['replies'], $level + 1); ?>
-                        </td>
-                    <?php } ?>
-                </tr><?php
-            }
-        }
-        $comments = $this->getCommentData();
-        renderComments($comments);
-        ?>
+                <?php endif; ?>
+            </tr>
+            <?php
+            if (!empty($comment['replies'])):
+                ?>
+                <tr>
+                    <td>
+                        <table border="1" style="width: 100%;">
+                            <?php renderComments($comment['replies'], $ticketId, $currentUser); ?>
+                        </table>
+                    </td>
+                </tr>
+                <?php
+            endif;
+        endforeach;
+    }
+    ?>
+</table>
+<div id="comment_container">
+    <table border="1" style="width: 100%;">
+        <?php renderComments($comments, $ticketId, $currentUser); ?>
     </table>
+</div>
+<button onclick="savelock(<?php echo $currentLevel ?>)">Lock</button>
+<div id="question">
+    <button onclick="addQue(<?php echo $currentLevel ?>,<?php echo $currentUser ?>,<?php echo $ticketId ?>)">Add
+        Question</button>
 </div>
 <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 <script>
     var url = '<?php echo $this->getUrl('*/*/update'); ?>';
-    CKEDITOR.replace('comment', {
-        height: 150
-    });
     var savecommentUrl = '<?php echo $this->getUrl('*/*/savechildcomment') ?>';
-    var saveLockUrl = '<?php echo $this->getUrl('*/*/savelock', array('_current' => true)) ?>';
+    var saveLockUrl = '<?php echo $this->getUrl('*/*/savelock') ?>';
+    var saveCompleteUrl = '<?php echo $this->getUrl('*/*/savecomplete') ?>';
+    var saveQueUrl = '<?php echo $this->getUrl('*/*/savequestion') ?>'
 </script>
-
-

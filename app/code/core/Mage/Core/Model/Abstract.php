@@ -301,6 +301,7 @@ abstract class Mage_Core_Model_Abstract extends Varien_Object
      */
     public function save()
     {
+       
         /**
          * Direct deleted items to delete method
          */

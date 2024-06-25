@@ -75,7 +75,6 @@ tr:hover {
     box-sizing: border-box;
 }
 
-/* Styling for buttons */
 button {
     padding: 5px 10px;
     font-size: 14px;
@@ -85,10 +84,20 @@ button {
     margin-right: 5px;
 }
 
-/* Specific styling for the Save button */
 
-
-/* Hover effect for buttons */
 button:hover {
     opacity: 0.9;
+}
+.comment-cell {
+    padding-left: 10px;
+    vertical-align: top;
+}
+.comment-reply {
+    background-color: #f9f9f9;
+}
+.comment-reply-level-1 {
+    background-color: #e9e9e9;
+}
+.highlight {
+    background-color: #d1ecf1 !important;
 }
