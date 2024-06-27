@@ -17,7 +17,9 @@
             <action method="addCss"><name>ticket/grid.css</name></action>
         </reference>
         <reference name="content">
-            <block type="ticket/adminhtml_edit" name="ticket.info.edit"/>
+            <block type="ticket/adminhtml_edit" name="ticket.info.edit">
+                <block type="ticket/adminhtml_comment" name="ticket.comment"></block>
+            </block>
         </reference>
     </adminhtml_ticket_view>
 </layout>

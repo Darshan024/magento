@@ -4,7 +4,6 @@ class Ccc_Ticket_Block_Adminhtml_Ticket extends Mage_Adminhtml_Block_Widget_Cont
     public function __construct()
     {
         $this->setTemplate('ticket/container.phtml');
-        $this->_headerText = Mage::helper('ticket')->__('Ticket');
         parent::__construct();
     }
     public function getTicketCollection()
