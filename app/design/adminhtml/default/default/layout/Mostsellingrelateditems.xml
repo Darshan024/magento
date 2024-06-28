@@ -1,0 +1,23 @@
+<layout>
+    <adminhtml_mostsellproduct_index>
+        <reference name="content">
+            <block type="Mostsellingrelateditems/adminhtml_mostsellproduct" name="mostsellingrelateditems.mostsellproduct"></block>
+        </reference>
+    </adminhtml_mostsellproduct_index>
+    <adminhtml_mostsellproduct_edit>
+        <reference name="content">
+            <block type="Mostsellingrelateditems/adminhtml_mostsellproduct_edit" name="mostsellingrelateditems.mostsellproduct.edit"></block>
+        </reference>
+    </adminhtml_mostsellproduct_edit>
+    <adminhtml_product_index>
+        <reference name="head">
+            <action method="addJs">
+                <script>mostsellingrelateditems/grid.js</script>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="Mostsellingrelateditems/adminhtml_view" name="mostsellingrelateditems.mostsellproduct.edit">
+            </block>
+        </reference>
+    </adminhtml_product_index>
+</layout>

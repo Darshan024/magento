@@ -5,7 +5,7 @@ function addReplyButton(commentId, ticketId, userId) {
         var replyDiv = document.createElement('div');
         replyDiv.id = 'replySection-' + commentId;
         replyDiv.innerHTML = `
-            <textarea class="replyTextarea" data-field="replies-` + commentId + `"></textarea>
+            <textarea class="replyTextarea" id="replies-` + commentId + `" data-field="replies-` + commentId + `"></textarea>
             <button class="saveReplyButton" onclick="saveReply(${commentId},${ticketId},${userId})">Save</button>
             <button onclick="cancel(${commentId})">Cancel</button>
         `;

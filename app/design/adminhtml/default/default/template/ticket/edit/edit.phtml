@@ -2,8 +2,6 @@
 $ticket = $this->getTicket();
 $ticketId = $ticket->getTicketId();
 $currentUser = $this->getCurrentUser();
-$currentLevel = $this->getLocklevel();
-
 ?>
 <table>
     <tr>
@@ -60,6 +58,7 @@ $currentLevel = $this->getLocklevel();
         </td>
     </tr>
 </table>
+
 <div id="comment_form">
     <form action="<?php echo Mage::getUrl('adminhtml/ticket/savecomment') ?>" method="post">
         <?php echo $this->getBlockHtml('formkey') ?>
@@ -73,7 +72,11 @@ $currentLevel = $this->getLocklevel();
     <?php echo $this->getChildHtml('ticket.comment'); ?>
 </div>
 
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
 
 <script>
+    CKEDITOR.replace('comment',{
+        height: 150
+    });
     var url = '<?php echo $this->getUrl('*/*/update'); ?>';
 </script>

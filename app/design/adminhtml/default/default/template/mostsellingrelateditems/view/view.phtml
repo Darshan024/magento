@@ -1,0 +1,37 @@
+<?php
+$products = $this->getProductArray();
+$productData = $this->getProductData();
+?>
+<div style="width: 100%;">
+    <div style="width: 14%; height: 100px; float: left;">
+        Select Product Id
+        <select id="productId">
+            <?php foreach ($products as $key => $value): ?>
+                <option value="<?php echo $key ?>"><?php echo $value ?></option>
+            <?php endforeach ?>
+        </select>
+        <button onclick="loadProduct()">Load</button>
+        <?php if (sizeof($productData)>0): ?>
+            <table border="1">
+                <tr>
+                    <td>Id</td>
+                    <td><?php echo $productData['entity_id'] ?></td>
+                </tr>
+                <tr>
+                    <td>Sku</td>
+                    <td><?php echo $productData['sku'] ?></td>
+                </tr>
+            </table>
+        <?php endif ?>
+
+        <?php if ($this->isMostSellingItem() && $this->isAllow()): ?>
+            <button onclick="showDetails()">Show Related Product Details</button>
+        <?php endif ?>
+    </div>
+    <div id="right" style="margin-left: 18%; height: 100px;">
+    </div>
+</div>
+<script>
+    url = '<?php echo $this->getUrl('*/*/ajax'); ?>';
+    showurl = '<?php echo $this->getUrl('*/*/viewgrid'); ?>';
+</script>

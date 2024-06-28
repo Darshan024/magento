@@ -148,7 +148,7 @@ class Ccc_Ticket_Adminhtml_TicketController extends Mage_Adminhtml_Controller_Ac
             'parent_id' => 0,
             'is_completed' => 'NotCompleted',
             'level' => $data['level'],
-            'is_locked' => 'Unlocked',
+            'is_locked' => 'UnLocked',
             'is_question' => 1,
         ];
         Mage::getModel('ticket/comment')->setData($commentData)->save();

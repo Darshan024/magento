@@ -32,12 +32,5 @@ class Ccc_Ticket_Block_Adminhtml_Edit extends Mage_Adminhtml_Block_Widget_Contai
     {
         return Mage::getSingleton('admin/session')->getUser()->getId();
     }
-    public function getLocklevel()
-    {
-        $ticketId = $this->getRequest()->getParam('ticket_id');
-        $comments = Mage::getModel('ticket/comment')->getCollection()->addFieldToFilter('ticket_id', $ticketId)->setOrder('level','DESC');
-        $level = $comments->getFirstItem()->getLevel();
-        return $level;
-    }
 }
 ?>

@@ -342,7 +342,6 @@ class Mage_Adminhtml_Block_Catalog_Product_Grid extends Mage_Adminhtml_Block_Wid
             )
             );
         }
-
         Mage::dispatchEvent('adminhtml_catalog_product_grid_prepare_massaction', array('block' => $this));
         return $this;
     }
