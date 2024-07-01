@@ -31,9 +31,6 @@
         <referense name="head">
             <action method="setTitle" translate="title"><title>Catalog</title></action>
         </referense>
-        <reference name="menu">
-            <action method="setActive"><menupath>catalog/products</menupath></action>
-        </reference>
         <reference name="content">
             <block type="adminhtml/catalog_product" name="products_list">
                 <block type="adminhtml/store_switcher" name="store_switcher" as="store_switcher">

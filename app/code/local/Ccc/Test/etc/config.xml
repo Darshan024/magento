@@ -26,8 +26,7 @@
         <models>
             <catalog>
                 <rewrite>
-                    <product>Ccc_Test_Model_Product</product><!--It
-                    is for overriding the Model class-->
+                    <product>Ccc_Test_Model_Product</product>
                 </rewrite>
             </catalog>
             <ccc_test>
@@ -38,8 +37,7 @@
         <blocks>
             <catalog>
                 <rewrite>
-                    <product>Ccc_Test_Block_Product</product><!--It
-                    is for overriding the Block class-->
+                    <product>Ccc_Test_Block_Product</product>
                 </rewrite>
             </catalog>
             <test>

@@ -97,6 +97,7 @@ class Ccc_Ticket_Adminhtml_TicketController extends Mage_Adminhtml_Controller_Ac
     public function saveChildCommentAction()
     {
         $data = $this->getRequest()->getParams();
+    
         $parentId = $data['parent_id'];
         $parentModel = Mage::getModel('ticket/comment')->load($parentId);
         $level = $parentModel->getLevel();

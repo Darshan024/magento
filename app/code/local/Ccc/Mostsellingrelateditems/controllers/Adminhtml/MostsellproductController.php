@@ -51,7 +51,6 @@ class Ccc_Mostsellingrelateditems_Adminhtml_MostsellproductController extends Ma
             }
             $model->setData($data);
             try {
-                Mage::dispatchEvent('most_sell_product_save_before', array('product' => $model));
                 $model->save();
                 Mage::dispatchEvent('most_sell_product_save_after', array('product' => $model));
 

@@ -9,8 +9,6 @@ class Ccc_Mostsellingrelateditems_Block_Adminhtml_Catalog_Product_Grid extends M
         $this->setId('productGrid');
         $this->setDefaultSort('entity_id');
         $this->setDefaultDir('DESC');
-        $this->setSaveParametersInSession(true);
-        $this->setVarNameFilter('product_filter');
     }
 
     protected function _getStore()

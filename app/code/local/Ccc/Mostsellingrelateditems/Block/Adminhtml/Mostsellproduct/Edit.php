@@ -3,9 +3,9 @@ class Ccc_Mostsellingrelateditems_Block_Adminhtml_Mostsellproduct_Edit extends M
 {
     public function __construct()
     {
-        $this->_objectId = 'id';
         $this->_controller = 'adminhtml_mostsellproduct';
         $this->_blockGroup = 'Mostsellingrelateditems';
+        $this->_objectId = 'id';
         parent::__construct();
 
         $this->_updateButton('save', 'label', Mage::helper('Mostsellingrelateditems')->__('Save'));
@@ -15,7 +15,6 @@ class Ccc_Mostsellingrelateditems_Block_Adminhtml_Mostsellproduct_Edit extends M
             'onclick' => 'saveAndContinueEdit()',
             'class' => 'save',
         ), -100);
-
         $this->_formScripts[] = "
             function saveAndContinueEdit(){
                 editForm.submit($('edit_form').action+'back/edit/');
