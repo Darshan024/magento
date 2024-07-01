@@ -1,0 +1,82 @@
+<?php
+$ticket = $this->getTicket();
+$ticketId = $ticket->getTicketId();
+$currentUser = $this->getCurrentUser();
+?>
+<table>
+    <tr>
+        <th>Ticket Id</th>
+        <td><?php echo $ticket->getId(); ?></td>
+    </tr>
+    <tr>
+        <th>Title</th>
+        <td class="title"><?php echo $ticket->getTitle(); ?></td>
+    </tr>
+    <tr>
+        <th>Description</th>
+        <td class="description"><?php echo $ticket->getDescription(); ?></td>
+    </tr>
+    <tr>
+        <th>Assign By</th>
+        <td>
+            <select name="assign_by" onchange="save(this.value,<?php echo $ticket->getId() ?>,'assign_by')">
+                <?php foreach ($this->getUserCollection() as $user) { ?>
+                    <option value="<?php echo $user->getUserId() ?>" <?php if ($user->getUserId() == $ticket->getAssignBy())
+                           echo 'selected'; ?>><?php echo $user->getUsername() ?></option>
+                <?php } ?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Assign To</th>
+        <td>
+            <select name="assign_to" onchange="save(this.value,<?php echo $ticket->getId() ?>,'assign_to')">
+                <?php foreach ($this->getUserCollection() as $user) { ?>
+                    <option value="<?php echo $user->getUserId() ?>" <?php if ($user->getUserId() == $ticket->getAssignTO())
+                           echo 'selected'; ?>><?php echo $user->getUsername() ?></option>
+                <?php } ?>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <th>Priority</th>
+        <td class="priority"><?php echo $ticket->getPriority(); ?></td>
+    </tr>
+    <?php
+    $statusData = $this->getStatusData($ticket->getStatus());
+    $statusColor = $statusData->getColourCode();
+    ?>
+    <tr>
+        <th>Status</th>
+        <td class="status_code" id="status_code" style="background-color: <?php echo $statusColor; ?>;">
+            <select name="status_code" onchange="save(this.value,<?php echo $ticket->getId(); ?>,'status')">
+                <?php foreach ($this->getStatusArray() as $status) { ?>
+                    <option value="<?php echo $status->getStatusCode(); ?>" <?php if ($status->getStatusCode() == $ticket->getStatus())
+                           echo 'selected'; ?>><?php echo $status->getStatusLabel(); ?></option>
+                <?php } ?>
+            </select>
+        </td>
+    </tr>
+</table>
+
+<div id="comment_form">
+    <form action="<?php echo Mage::getUrl('adminhtml/ticket/savecomment') ?>" method="post">
+        <?php echo $this->getBlockHtml('formkey') ?>
+        <textarea id="comment" rows="10" cols="50" name="comment"></textarea>
+        <input type="hidden" value="<?php echo $ticketId ?>" name="ticket_id">
+        <input type="hidden" value="<?php echo $currentUser ?>" name="user_id">
+        <button type="submit">Save</button>
+    </form>
+</div>
+<div id="comment_container">
+    <?php echo $this->getChildHtml('ticket.comment'); ?>
+</div>
+
+<script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
+
+<script>
+    CKEDITOR.replace('comment',{
+        height: 150
+    });
+    var url = '<?php echo $this->getUrl('*/*/update'); ?>';
+</script>

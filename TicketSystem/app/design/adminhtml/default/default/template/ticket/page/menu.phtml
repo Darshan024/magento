@@ -1,0 +1,103 @@
+<?php
+$userCollection = $this->getUserCollection();
+?>
+<div class="nav-bar">
+
+    <?php echo $this->getMenuLevel($this->getMenuArray()); ?>
+
+
+    <a id="create-ticket"><button type="button"
+            onclick="getPopup()"><?php echo $this->__('Create Ticket') ?></button></a>
+</div>
+<div id="ticket_container">
+    <form action="<?php echo Mage::getUrl('adminhtml/ticket/save') ?>" method="post">
+        <?php echo $this->getBlockHtml('formkey') ?>
+
+        <label for="title">Title</label>
+        <input type="text" id="title" name="ticket[title]"><br><br>
+
+        <label for="description">Description</label>
+        <textarea type="text" id="description" name="ticket[description]"></textarea><br><br>
+
+        <label>Assign By:</label>
+        <select name="ticket[assign_by]">
+            <?php foreach ($userCollection as $user) { ?>
+                <option value="<?php echo $user->getUserId() ?>"><?php echo $user->getUsername() ?></option>
+            <?php } ?>
+        </select><br><br>
+        <label for="assign_to">Assign To</label>
+        <select name="ticket[assign_to]" >
+            <?php foreach ($userCollection as $user) { ?>
+                <option value="<?php echo $user->getUserId() ?>"><?php echo $user->getUsername() ?></option>
+            <?php } ?>
+        </select><br><br>
+
+        <label for="priority">Priority</label>
+        <input type="number" id="priority" name="ticket[priority]"><br><br>
+
+        <label for="status">Status</label>
+        <select name="ticket[status]">
+            <?php foreach ($this->getStatusArray() as $status) { ?>
+                <option value="<?php echo $status->getStatusCode() ?>"><?php echo $status->getStatusLabel() ?></option>
+            <?php } ?>
+        </select><br><br>
+        <button type="submit">Submit</button>
+        <button type="button" onclick="closePopup()">Close</button>
+    </form>
+</div>
+
+<script>
+    function getPopup() {
+        document.getElementById('ticket_container').style.display = 'block';
+    }
+
+    function closePopup() {
+        document.getElementById('ticket_container').style.display = 'none';
+    }
+</script>
+<style>
+    #ticket_container {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: white;
+        padding: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        z-index: 1000;
+        width: 400px;
+    }
+
+    .header {
+        background: url(images/header_top_bg.gif) repeat-x #425e66;
+        text-align: left;
+    }
+
+    #ticket_container label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+    #ticket_container input[type="text"],
+    #ticket_container input[type="number"],
+    #ticket_container textarea,
+    #ticket_container select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    #ticket_container button {
+        padding: 10px 20px;
+        margin: 10px 5px 0 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>

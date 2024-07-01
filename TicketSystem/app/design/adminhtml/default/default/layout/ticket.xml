@@ -1,0 +1,25 @@
+<layout>
+    <adminhtml_ticket_index>
+        <reference name="content">
+            <block type="ticket/adminhtml_ticket" name="ticket.info">
+                <block type="page/html_pager" name="ticket.pager"/>
+            </block>
+        </reference>
+        <reference name="head">
+            <action method="addCss"><name>ticket/grid.css</name></action>
+            <action method="addJs"><script>ticket/grid.js</script></action>
+        </reference>
+    </adminhtml_ticket_index>
+    <adminhtml_ticket_view>
+        <reference name="head">
+            <action method="addJs"><script>ticket/grid.js</script></action>
+            <action method="addJs"><script>ticket/comment.js</script></action>
+            <action method="addCss"><name>ticket/grid.css</name></action>
+        </reference>
+        <reference name="content">
+            <block type="ticket/adminhtml_edit" name="ticket.info.edit">
+                <block type="ticket/adminhtml_comment" name="ticket.comment"></block>
+            </block>
+        </reference>
+    </adminhtml_ticket_view>
+</layout>
