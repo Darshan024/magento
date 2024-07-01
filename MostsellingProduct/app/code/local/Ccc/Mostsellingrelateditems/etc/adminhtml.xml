@@ -1,0 +1,18 @@
+<config>
+    <menu>
+        <catalog translate="title" module="catalog">
+            <children>
+                <mostsellproduct translate="title" module="catalog">
+                    <title>Most Selling Related Items</title>
+                    <action>adminhtml/mostsellproduct</action>
+                    <sort_order>0</sort_order>
+                </mostsellproduct>
+                <viewproduct>
+                    <title>Most Selling Related Grid</title>
+                    <action>adminhtml/product</action>
+                    <sort_order>0</sort_order>
+                </viewproduct>
+            </children>
+        </catalog>
+    </menu>
+</config>
